@@ -5,6 +5,7 @@ import * as showsCtrl from '../controllers/shows.js'
 const router = Router()
 
 router.get('/', showsCtrl.index)
+// router.get('/new', showsCtrl.new)
 
 export {
   router
