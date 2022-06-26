@@ -1,10 +1,26 @@
   <% if (!user) { %>
     <link rel="stylesheet" href="/stylesheets/siwg.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <% } %>
 </head>
 <body>
   <nav>
+    <span class="material-symbols-outlined">
+      tv
+      </span>
+      
+
     <% if (user) { %>
+      <!-- <a 
+      href="/users" <%# title === 'Community' ? 'class="active"' : '' %>
+    >
+      COMMUNITY
+    </a>
+    <a 
+      href="/shows/new" <%# title === 'Add Show' ? 'class="active"' : '' %>
+    >
+      ADD SHOW
+    </a> -->
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
