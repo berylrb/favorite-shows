@@ -17,16 +17,7 @@
     >
       COMMUNITY
     </a>
-    <a 
-      href="/shows/new" <%- title === 'Add Show' ? 'class="active"' : '' %>
-    >
-      ADD SHOW
-    </a>
-    <a 
-      href="/shows" <%- title === 'All Shows' ? 'class="active"' : '' %>
-    >
-      ALL SHOWS
-    </a>
+    <br>
       <a href="/auth/logout">
         <button type="submit">Logout</button>
       </a>
@@ -37,4 +28,8 @@
         </button>
       </a>
     <% } %>
+    <form action="/shows/search" method="POST">
+      <input type="text" name="search" placeholder="Search for Show" autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
   </nav>

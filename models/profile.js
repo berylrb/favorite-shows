@@ -3,9 +3,8 @@ import mongoose from 'mongoose'
 const Schema = mongoose.Schema
 
 const showSchema = new mongoose.Schema({
-  showName: String,
-  image: String,
-  seasons: Number
+  name: String,
+  poster_path: String,
 }, {
   timestamps: true
 })

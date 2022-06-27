@@ -1,11 +1,11 @@
 import { Router } from 'express'
 import * as showsCtrl from '../controllers/shows.js'
-// import { isLoggedIn } from '../middleware/middleware.js'
+import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-router.get('/', showsCtrl.index)
-// router.get('/new', showsCtrl.new)
+router.post('/search', isLoggedIn, showsCtrl.showSearch)
+// router.get('/', showsCtrl.index)
 
 export {
   router
