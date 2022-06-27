@@ -5,9 +5,9 @@ import * as profilesCtrl from '../controllers/profiles.js'
 const router = Router()
 
 router.get('/', isLoggedIn, profilesCtrl.index)
-router.get('/:id', isLoggedIn, profilesCtrl.show)
-router.post('/:id/shows', isLoggedIn, profilesCtrl.createShow)
-router.delete('/shows/:id', isLoggedIn, profilesCtrl.deleteShow)
+// router.get('/:id', isLoggedIn, profilesCtrl.show)
+// router.post('/:id/shows', isLoggedIn, profilesCtrl.createShow)
+// router.delete('/shows/:id', isLoggedIn, profilesCtrl.deleteShow)
 
 
 export {
