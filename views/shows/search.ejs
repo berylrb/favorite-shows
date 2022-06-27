@@ -7,13 +7,16 @@
   <% if (search) { %>
     <h2>You searched for <%= search %></h2>
   <% } %>
-  <% results.forEach(result => { %>
-    <!-- make div a tag -->
-    <div class="wrapper"> 
-      <h2><%= result.name %></h2>
-      <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt="">
-    </div>
-  <% }) %>
+  <div class="container">
+    <% results.forEach(result => { %>
+      <!-- make div a tag -->
+      <div class="wrapper"> 
+        <h2><%= result.name %></h2>
+        <!-- if no pic add placeholder -->
+        <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt="">
+      </div>
+    <% }) %>
+</div>
 </main>
 
 <%- include('../partials/footer') %>

@@ -1,5 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src: url("../fonts/codropsicons/codropsicons.eot");
+	src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
+}
+
 html {
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 
 /* The Universal Selector */
@@ -17,18 +26,38 @@ html {
 }
 
 body {
-  background-color: gray;
+  background-color: rgb(197, 217, 214);
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
-nav {
-  background-color: white;
-  font-size: 1.6rem;
+body > nav {
+  grid-area: nav;
+  background-color: rgb(149, 177, 172);
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border-bottom: 2px #424748 solid;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #424748;
+}
+
+nav > a:visited {
+  color: #424748;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: rgb(97, 140, 240);
 }
 
 main {
@@ -39,5 +68,8 @@ main {
 }
 
 h1 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  margin: 0;
   font-size: 3.6rem;
 }
