@@ -1,0 +1,56 @@
+<%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/shows/search.css" />
+<%- include('../partials/nav') %>
+
+<main>
+  <section class="bg-dark text-secondary px-4">
+    <h1 class="display-5 fw-bold text-white pt-2 text-center">
+      <%= apiResult.name %>
+    </h1>
+    <div class="container py-4">
+      <% if (apiResult.poster_path) { %>
+        <img class="poster" src="https://image.tmdb.org/t/p/original/<%= apiResult.poster_path %>" alt="">
+      <% } else { %>
+        <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
+      <% } %>
+      <div class="accordion" id="accordion">
+        <div class="accordion-item bg-dark">
+          <h2 class="accordion-header" id="headingOne">
+            <button 
+              class="accordion-button bg-dark text-light" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseOne" 
+              aria-expanded="true" 
+              aria-controls="collapseOne"
+            >
+              Show Description
+            </button>
+          </h2>
+          <div 
+            id="collapseOne" 
+            class="accordion-collapse collapse" 
+            aria-labelledby="headingOne" 
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <p class="mt-4"><%= apiResult.overview %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="mt-4 fs-4 text-light">Released: <%= apiResult.air_date %></p>
+      <%# This is where we'll list the profiles who have collected the game %> 
+    </div>
+    <%# This is where we'll display a button to add/remove the game from your collection %> 
+    
+    <div class="container">
+      <%# This is where we'll display a form to add a review once the game is added to your collection %> 
+      
+      <%# This is where we'll display all the reviews for a game %> 
+      
+    </div>
+  </section>
+</main>
+
+<%- include('../partials/footer') %>
