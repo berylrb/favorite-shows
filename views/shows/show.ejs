@@ -101,7 +101,7 @@
     <% if (userHasShow) { %>
       <form 
         class="text-center" 
-        action="/games/<%= apiResult.id %>/removeFromCollection?_method=PATCH" 
+        action="/shows/<%= apiResult.id %>/removeFromCollection?_method=PATCH" 
         method="POST"
       >
         <button class="btn btn-danger">
@@ -111,9 +111,81 @@
     <% } %>
     
     <div class="container">
-      <%# This is where we'll display a form to add a review once the game is added to your collection %> 
+      <% if (!userHasReviewed && userHasShow) { %>
+        <form action="/reviews/<%= show._id %>" method="POST">
+          <div class="mb-3 mt-4">
+            <label 
+              for="exampleFormControlTextarea1" 
+              class="form-label text-light"
+            >
+              Leave a review:
+            </label>
+            <textarea 
+              name="content" 
+              class="form-control" 
+              id="exampleFormControlTextarea1" 
+              rows="3"
+            ></textarea>
+            <select 
+              name="rating" 
+              class="form-select" 
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>        
+          </div>
+          <button class="btn btn-warning"type="submit">Add Review</button>
+        </form> 
+      <% } %>
       
-      <%# This is where we'll display all the reviews for a game %> 
+      <% if (show?.reviews.length) { %>
+        <h2 class="text-light my-3">Reviews:</h2>
+        <div 
+          class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g1 px-4"
+        >
+        <% show.reviews.forEach(review => { %>
+          <div class="col">
+            <div class="card mb-3 bg-secondary">
+              <div class="row g-0">
+
+                <div class="col-3">
+                  <img 
+                    src="<%= review.author.avatar %>" 
+                    class="img-fluid rounded-circle ms-2 mt-2" 
+                    alt="<%= review.author.name %>'s avatar"
+                  >
+                </div>
+                <div class="col-9">
+                  <div class="card-body">
+                    <h3 class="card-title text-dark">
+                      <a 
+                        class="text-dark text-decoration-none" 
+                        href="/profiles/<%= review.author._id %>"
+                      >
+                        <%= review.author.name %>
+                      </a>
+                    </h3>
+                    <p class="card-text text-dark">
+                      <%= "🌟".repeat(review.rating) %>
+                    </p>
+                    <p class="card-text text-dark"><%= review.content %></p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        <% }) %>
+        </div>
+      <% } %>
       
     </div>
   </section>
