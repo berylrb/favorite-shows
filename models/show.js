@@ -8,6 +8,7 @@ const showSchema = new mongoose.Schema({
   imageUrl: String,
   released: Date,
   collectedBy: [{ type: Schema.Types.ObjectId, ref: "Profile:"}],
+  reviews: [{ type: Schema.Types.ObjectId, ref: "ShowReview"}]
 }, {
   timestamps: true
 })

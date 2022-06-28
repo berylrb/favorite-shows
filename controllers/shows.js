@@ -1,4 +1,5 @@
 import { Show } from "../models/show.js"
+import { ShowReview } from '../models/showReview.js'
 import axios from "axios"
 
 function showSearch(req, res) {
@@ -18,12 +19,20 @@ function show(req, res) {
   axios.get(`https://api.themoviedb.org/3/tv/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US&page=1}`)
   .then(response => {
     Show.findOne({ mdbId: response.data.id })
+    .populate('collectedBy')
+    .populate({
+      path: 'reviews',
+      populate: {
+        path: 'author'
+      }
+    })
     .then(show => {
       res.render("shows/show", {
         title: "Show Details",
         apiResult: response.data,
         show,
         userHasShow: show?.collectedBy.some(profile => profile._id.equals(req.user.profile._id)),
+        userHasReviewed: show?.reviews.some(review => review.author?.equals(req.user.profile._id))
       })
     })
   })
