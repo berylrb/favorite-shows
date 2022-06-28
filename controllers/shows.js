@@ -15,7 +15,7 @@ function showSearch(req, res) {
 }
 
 function show(req, res) {
-  axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${process.env.API_KEY}&language=en-US&page=1&query=${req.params.id}`)
+  axios.get(`https://api.themoviedb.org/3/tv/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US&page=1}`)
   .then(response => {
     Show.findOne({ mdbId: response.data.id })
     .then(show => {
