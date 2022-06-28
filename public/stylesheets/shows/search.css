@@ -7,13 +7,13 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2.5rem;
   justify-content: center;
 }
 
 .wrapper {
   border: 10px solid rgb(11, 18, 11);
-  width: 30vw;
+  width: 28vw;
   background-color: black;
   color: white;
 }
