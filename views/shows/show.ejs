@@ -5,11 +5,11 @@
 <main>
   <section class="bg-dark text-secondary px-4">
     <h1 class="display-5 fw-bold text-white pt-2 text-center">
-      <%= apiResult.name %>
+      <%= show.name %>
     </h1>
     <div class="container py-4">
-      <% if (apiResult.poster_path) { %>
-        <img class="poster" src="https://image.tmdb.org/t/p/original/<%= apiResult.poster_path %>" alt="">
+      <% if (show.poster_path) { %>
+        <img class="poster" src="https://image.tmdb.org/t/p/original/<%= show.poster_path %>" alt="">
       <% } else { %>
         <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
       <% } %>
