@@ -33,7 +33,49 @@ function show(req, res) {
   })
 }
 
+function addToCollection(req, res) {
+  req.body.collectedBy = req.user.profile._id
+  Show.findOne({ mdbId: req.params.id })
+  .populate('collectedBy')
+  .then(show => {
+    if (show) {
+    show.collectedBy.push(req.user.profile._id)
+    show.save()
+    .then(() => {
+      res.redirect(`/shows/${req.params.id}`)
+    })
+  } else {
+    Show.create(req.body)
+    console.log('did this add')
+    .then(() => {
+      res.redirect(`/shows/${req.params.id}`)
+    })
+  }
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
+function removeFromCollection(req, res) {
+  Show.findOne({ mdbId: req.params.id })
+  .then(show => {
+    show.collectedBy.remove({_id: req.user.profile._id})
+    show.save()
+    .then(() => {
+      res.redirect(`/shows/${req.params,id}`)
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/')
+  })
+}
+
 export {
   showSearch,
-  show
+  show,
+  addToCollection,
+  removeFromCollection
 }

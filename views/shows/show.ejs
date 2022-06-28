@@ -40,9 +40,75 @@
         </div>
       </div>
       <p class="mt-4 fs-4 text-light">Rating: <%= apiResult.vote_average %></p>
-      <%# This is where we'll list the profiles who have collected the game %> 
+
+      <div class="accordion" id="accordion">
+        <div class="accordion-item bg-dark">
+          <h2 class="accordion-header" id="headingTwo">
+            <button 
+              class="accordion-button bg-dark text-light" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#collapseTwo" 
+              aria-expanded="true" 
+              aria-controls="collapseTwo"
+            >
+              This show appears in <%= show?.collectedBy.length %> Queued user collections:
+            </button>
+          </h2>
+          <div 
+            id="collapseTwo" 
+            class="accordion-collapse collapse" 
+            aria-labelledby="headingTwo" 
+            data-bs-parent="#accordion"
+          >
+            <div class="accordion-body">
+              <% show?.collectedBy.forEach(profile => { %>
+                <a href="/profiles/<%= profile._id %>" class="text-white">
+                  <p>
+                    <img 
+                      src="<%= profile.avatar %>" 
+                      alt="<%= profile.name %>'s avatar"
+                      class="me-3 rounded-circle"
+                      width="50px"
+                      height="50px"
+                    >
+                    <%= profile.name %>
+                  </p>
+                </a>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <%# This is where we'll display a button to add/remove the game from your collection %> 
+    <form 
+        class="text-center" 
+        action="/shows/<%= apiResult.id %>/addToCollection?_method=PATCH" 
+        method="POST"
+      >
+        <input type="text" name="name" hidden value="<%= apiResult.name %>">
+        <input type="text" name="rawgId" hidden value="<%= apiResult.id %>">
+        <input 
+          type="text" 
+          name="imageUrl" 
+          hidden 
+          value="https://image.tmdb.org/t/p/original/<%= apiResult.poster_path %>"
+        >
+        <button class="btn btn-primary">
+          Add To Collection
+        </button> 
+      </form>
+    <% if (userHasShow) { %>
+      <form 
+        class="text-center" 
+        action="/games/<%= apiResult.id %>/removeFromCollection?_method=PATCH" 
+        method="POST"
+      >
+        <button class="btn btn-danger">
+          Remove From Collection
+        </button>
+      </form>
+    <% } %>
     
     <div class="container">
       <%# This is where we'll display a form to add a review once the game is added to your collection %> 

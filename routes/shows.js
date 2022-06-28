@@ -6,7 +6,8 @@ const router = Router()
 
 router.post('/search', isLoggedIn, showsCtrl.showSearch)
 router.get('/:id', isLoggedIn, showsCtrl.show)
-// router.get('/', showsCtrl.index)
+router.patch("/:id/addToCollection", isLoggedIn, showsCtrl.addToCollection)
+router.patch("/:id/removeFromCollection", isLoggedIn, showsCtrl.removeFromCollection)
 
 export {
   router
