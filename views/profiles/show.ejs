@@ -80,7 +80,28 @@
       </div>
       <h2 class="mb-3"><%= profile.name %>'s shows</h2>
       <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g5 px-1">
-        <%# This is where we'll loop over our games! %> 
+
+
+    <% shows.forEach(show => { %>
+          <div class="col">
+            <div class="card bg-dark shadow-sm mb-3">
+              <% if (show.poster_path) { %>
+              <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt="">
+            <% } else { %>
+              <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
+            <% } %>
+            <div class="card-body">
+              <p class="card-title fs-4 text-light"><%= show.name %></p>
+              <a 
+                href="/shows/<%= show.mdbId %>" 
+                class="btn btn-primary"
+              >
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
       </div>
     </div>
   </section>

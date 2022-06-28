@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Show } from '../models/show.js'
 
 function addShow(req, res) {
   Profile.findById(req.user.profile._id)
@@ -30,10 +31,18 @@ function show(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
     const isMe = profile._id.equals(req.user.profile._id)
-    res.render("profiles/show", {
-      title: `${profile.name}'s profile`,
-      profile,
-      isMe
+    Show.find({ collectedBy: profile._id })
+    .then(shows => {
+      Profile.findById(req.user.profile)
+      .then(userProfile => {
+        res.render("profiles/show", {
+          title: `${profile.name}'s profile`,
+          profile,
+          isMe,
+          userProfile,
+          shows
+        })
+      })
     })
   })
   .catch(error => {
