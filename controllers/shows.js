@@ -6,7 +6,6 @@ function showSearch(req, res) {
   console.log(req.body)
   axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${process.env.API_KEY}&language=en-US&page=1&query=${req.body.search}`)
   .then(response => {
-    console.log(response.data.results)
     res.render('shows/search', {
       title: 'Search Results',
       search: req.body.search ? req.body.search : null,
@@ -18,6 +17,7 @@ function showSearch(req, res) {
 function show(req, res) {
   axios.get(`https://api.themoviedb.org/3/tv/${req.params.id}?api_key=${process.env.API_KEY}&language=en-US&page=1}`)
   .then(response => {
+    console.log(response.data.id)
     Show.findOne({ mdbId: response.data.id })
     .populate('collectedBy')
     .populate({
@@ -27,6 +27,7 @@ function show(req, res) {
       }
     })
     .then(show => {
+      console.log(show?.collectedBy, req.user.profile._id, 'meatball')
       res.render("shows/show", {
         title: "Show Details",
         apiResult: response.data,
@@ -70,10 +71,11 @@ function addToCollection(req, res) {
 function removeFromCollection(req, res) {
   Show.findOne({ mdbId: req.params.id })
   .then(show => {
+    console.log('show', show)
     show.collectedBy.remove({_id: req.user.profile._id})
     show.save()
     .then(() => {
-      res.redirect(`/shows/${req.params,id}`)
+      res.redirect(`/shows/${req.params.id}`)
     })
   })
   .catch(error => {
