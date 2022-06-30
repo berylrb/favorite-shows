@@ -27,6 +27,8 @@ function index(req, res) {
   })
 }
 
+
+
 function show(req, res) {
   Profile.findById(req.params.id)
   .then(profile => {
@@ -50,6 +52,8 @@ function show(req, res) {
     res.redirect('/')
   })
 }
+
+
 
 function edit(req, res) {
   Profile.findById(req.params.id)
@@ -75,6 +79,7 @@ function update(req, res) {
     res.redirect('/')
   })
 }
+
 
 
 export {
