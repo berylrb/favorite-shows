@@ -6,13 +6,14 @@
     }
   </style>
 <% } %>
+<link rel="stylesheet" href="/stylesheets/profiles/show.css">
 <%- include('../partials/nav') %>
 
 <main>
   <section class="bg-dark text-secondary px-4 py-5 text-center">
     <% if (profile.avatar) { %>
       <img
-        class="image-rounded" 
+        class="image-avi" 
         src="<%= profile.avatar %>" 
         alt="<%= profile.name %>'s avatar"
       >
