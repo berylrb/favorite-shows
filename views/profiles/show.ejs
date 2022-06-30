@@ -86,8 +86,8 @@
     <% shows.forEach(show => { %>
           <div class="col">
             <div class="card bg-dark shadow-sm mb-3">
-              <% if (show.poster_path) { %>
-              <img class="poster" src="https://image.tmdb.org/t/p/original/<%= show.poster_path %>" alt="">
+              <% if (show.imageUrl) { %>
+              <img class="poster" src="<%= show.imageUrl %>" alt="">
             <% } else { %>
               <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
             <% } %>

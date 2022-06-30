@@ -1,4 +1,9 @@
 .image-avi {
   margin-top: 5vh;
-  height: 10vh;
+  max-height: 10vh;
+}
+
+.poster {
+  margin-top: 5vh;
+  max-height: 40vh;
 }

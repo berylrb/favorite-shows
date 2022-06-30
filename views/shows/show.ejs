@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/shows/search.css" />
+<link rel="stylesheet" href="/stylesheets/shows/show.css" />
 <%- include('../partials/nav') %>
 
 <main>
@@ -8,11 +8,15 @@
       <%= apiResult.name %>
     </h1>
     <div class="container py-4">
+      <div class="wrapper">
+        <div class="container">
       <% if (apiResult.poster_path) { %>
         <img class="poster" src="https://image.tmdb.org/t/p/original/<%= apiResult.poster_path %>" alt="">
       <% } else { %>
         <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
       <% } %>
+        </div>
+      </div>
       <div class="accordion" id="accordion">
         <div class="accordion-item bg-dark">
           <h2 class="accordion-header" id="headingOne">
@@ -81,6 +85,7 @@
         </div>
       </div>
     </div>
+    <% if (!userHasShow) { %>
     <form 
         class="text-center" 
         action="/shows/<%= apiResult.id %>/addToCollection?_method=PATCH" 
@@ -98,6 +103,7 @@
           Add To Collection
         </button> 
       </form>
+      <% } %>
     <% if (userHasShow) { %>
       <form 
         class="text-center" 
@@ -135,11 +141,6 @@
               <option value="3">3</option>
               <option value="4">4</option>
               <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
             </select>        
           </div>
           <button class="btn btn-warning"type="submit">Add Review</button>
