@@ -69,3 +69,13 @@ h1 {
   margin-top: 4vh;
   font-size: 3.6rem;
 }
+
+.material-symbols-outlined {
+  text-align: left;
+  display: flex;
+}
+
+hr {
+  color: rgb(207, 57, 57);
+  background-color: rgb(207, 57, 57);
+}
