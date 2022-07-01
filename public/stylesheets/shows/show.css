@@ -1,3 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
+@font-face {
+	font-weight: normal;
+	font-style: normal;
+	font-family: 'codropsicons';
+	src: url("../fonts/codropsicons/codropsicons.eot");
+	src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
+}
+
+
+
+.show-name {
+  text-align: center;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: 300;
+}
+
+
 .poster {
   width: 100%;
   height: 82%;
@@ -18,3 +36,22 @@
   color: white;
 }
 
+
+.collector {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.collector img {
+  margin-top: 2vh;
+
+}
+
+.description {
+  max-width: 40vw;
+}

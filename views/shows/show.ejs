@@ -4,7 +4,7 @@
 
 <main>
   <section class="bg-dark text-secondary px-4">
-    <h1 class="display-5 fw-bold text-white pt-2 text-center">
+    <h1 class="show-name">
       <%= apiResult.name %>
     </h1>
     <div class="container py-4">
@@ -17,30 +17,12 @@
       <% } %>
         </div>
       </div>
-      <div class="accordion" id="accordion">
-        <div class="accordion-item bg-dark">
+      <div class="description">
           <h2 class="accordion-header" id="headingOne">
-            <button 
-              class="accordion-button bg-dark text-light" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#collapseOne" 
-              aria-expanded="true" 
-              aria-controls="collapseOne"
-            >
               Show Description
-            </button>
           </h2>
-          <div 
-            id="collapseOne" 
-            class="accordion-collapse collapse" 
-            aria-labelledby="headingOne" 
-            data-bs-parent="#accordion"
-          >
             <div class="accordion-body">
               <p class="mt-4"><%= apiResult.overview %></p>
-            </div>
-          </div>
         </div>
       </div>
       <p class="mt-4 fs-4 text-light">Rating: <%= apiResult.vote_average %></p>
@@ -48,41 +30,25 @@
       <div class="accordion" id="accordion">
         <div class="accordion-item bg-dark">
           <h2 class="accordion-header" id="headingTwo">
-            <button 
-              class="accordion-button bg-dark text-light" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target="#collapseTwo" 
-              aria-expanded="true" 
-              aria-controls="collapseTwo"
-            >
-              This show appears in <%= show?.collectedBy.length %> Queued user collections:
-            </button>
+              This show appears in <%= show?.collectedBy.length %> user Queues:
           </h2>
-          <div 
-            id="collapseTwo" 
-            class="accordion-collapse collapse" 
-            aria-labelledby="headingTwo" 
-            data-bs-parent="#accordion"
-          >
-            <div class="accordion-body">
               <% show?.collectedBy.forEach(profile => { %>
-                <a href="/profiles/<%= profile._id %>" class="text-white">
-                  <p>
-                    <img 
-                      src="<%= profile.avatar %>" 
-                      alt="<%= profile.name %>'s avatar"
-                      class="me-3 rounded-circle"
-                      width="50px"
-                      height="50px"
-                    >
-                    <%= profile.name %>
-                  </p>
-                </a>
+                <div class="collector">
+                  <a href="/profiles/<%= profile._id %>" class="text-white">
+                    <p>
+                      <img 
+                        src="<%= profile.avatar %>" 
+                        alt="<%= profile.name %>'s avatar"
+                        class="me-3 rounded-circle"
+                        width="50px"
+                        height="50px"
+                      >
+                      <%= profile.name %>
+                    </p>
+                  </a>
+                </div>
               <% }) %>
             </div>
-          </div>
-        </div>
       </div>
     </div>
     <% if (!userHasShow) { %>
