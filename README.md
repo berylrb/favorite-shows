@@ -8,7 +8,7 @@ Additionally, check out the trello board used for planning this app at <a href="
 
 
 
-## Technologies Used:
+## Some Technologies Used:
 <div align ="center">
 <br>
 <br>
