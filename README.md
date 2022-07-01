@@ -34,7 +34,6 @@ In its current state, this app is a mere imagining of its potential and future m
 - [ ] allow users to create multiple lists
 - [ ] allow users to search for shows in other users' lists
 - [ ] allow users to search for a show based on keyword
-- [ ] fix @media alignment on contact page for socials icons
 
 
 ## Special Thanks:
