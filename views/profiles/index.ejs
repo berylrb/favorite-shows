@@ -6,6 +6,7 @@
 <main>
   <div class="cardContainer">
     <% profiles.forEach(profile => { %>
+    <div class="profile-card">
       <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
         <div class="card">
           <% if (profile.avatar) { %>
@@ -19,6 +20,7 @@
               alt="A placeholder avatar"
             >
           <% } %>
+      </div>
           <div class="card-body">
             <h1 class="card-title"><%= profile.name %></h1>
           </div>

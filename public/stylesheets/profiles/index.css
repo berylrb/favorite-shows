@@ -2,3 +2,22 @@ img {
   margin-top: 5vh;
   height: 10vh;
 }
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  width: 80vw;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  margin: 5vw;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  width: 20vw;
+
+}
