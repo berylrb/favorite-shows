@@ -6,11 +6,12 @@ img {
 .cardContainer {
   display: flex;
   flex-direction: row;
-  width: 80vw;
+  max-width: 100vw;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+
 
 .profile-card {
   margin: 5vw;
@@ -18,6 +19,28 @@ img {
   position: relative;
   flex-wrap: wrap;
   border: 1px solid black;
+  max-height: 40vh;
+  max-width: 22vw;
+  height: 40vh;
   width: 20vw;
+  text-align: center;
+}
 
+.card-title {
+  font-size: 2em;
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  margin: 5vw;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
 }
