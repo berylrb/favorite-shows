@@ -168,3 +168,22 @@ textarea {
   background-color: rgb(207, 57, 57);
   width: 100%;
 }
+
+
+.text-light {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 6vh;
+}
+
+.review-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 1px solid black;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}

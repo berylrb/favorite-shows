@@ -117,11 +117,13 @@
         </form> 
       <% } %>
       
+
       <% if (show?.reviews.length) { %>
         <h2 class="text-light my-3">Reviews:</h2>
         <div 
           class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g1 px-4"
         >
+        <div class="review-wrapper">
         <% show.reviews.forEach(review => { %>
           <div class="col">
             <div class="card mb-3 bg-secondary">
@@ -159,7 +161,7 @@
       <% } %>
       
     </div>
-
+  </div>
 
   <br>
   <br>
