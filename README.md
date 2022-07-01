@@ -7,6 +7,19 @@ Visit the Queue app at <a href="https://beryl-queue.herokuapp.com/" target="_bla
 Additionally, check out the trello board used for planning this app at <a href="https://trello.com/b/VBQIEHJN/tv-show-app" target="_blank">https://trello.com/b/VBQIEHJN/tv-show-app</a>.
 
 
+## App Preview
+
+<img src="https://i.ibb.co/93YTZ2L/Screen-Shot-2022-07-01-at-11-56-01-AM.png">
+
+<hr>
+
+<img src="https://i.ibb.co/Y8KF4yF/Screen-Shot-2022-07-01-at-11-58-34-AM.png">
+
+<hr>
+
+
+
+
 
 ## Some Technologies Used:
 <div align ="center">
