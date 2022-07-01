@@ -1,11 +1,4 @@
 <%- include('../partials/html-head') %>
-<% if (user.profile.equals(profile._id)) { %>
-  <style>
-    #profile-dropdown {
-      display: none;
-    }
-  </style>
-<% } %>
 <link rel="stylesheet" href="/stylesheets/profiles/show.css">
 <%- include('../partials/nav') %>
 
@@ -60,22 +53,14 @@
       >
         Edit Profile
       </a>
-      <a 
-        class="btn btn-danger ms-4"
-        role="button" 
-        href="/auth/logout"
-      >
-        Logout
-      </a>
     <% } %>
-    <%# This is where we'll add a button to 'friend/unfriend' a user %> 
+
     
   </section>
   <section class="bg-light pt-3">
-
+<div class="container">
     <% shows.forEach(show => { %>
-          <div class="col">
-            <div class="card bg-dark shadow-sm mb-3">
+          <div class="wrapper">
               <% if (show.imageUrl) { %>
               <img class="poster" src="<%= show.imageUrl %>" alt="">
             <% } else { %>
@@ -89,6 +74,7 @@
               >
                 Details
               </a>
+            </div>
             </div>
           </div>
         </div>

@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  background-color: rgb(197, 217, 214);
+  background-color: white;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: 'Raleway', Arial, sans-serif;
   margin: 0;
@@ -34,12 +34,13 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: rgb(149, 177, 172);
+  background-color: rgb(207, 57, 57);
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
   border-bottom: 2px #424748 solid;
+  color: white;
 }
 
 nav > a {
@@ -47,12 +48,9 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-  color: #424748;
+  color: #ffffff;
 }
 
-nav > a:visited {
-  color: #424748;
-}
 
 nav > a:hover {
   color: white;
