@@ -3,7 +3,6 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <section class="bg-dark text-secondary px-4">
     <h1 class="show-name">
       <%= apiResult.name %>
     </h1>
@@ -18,13 +17,14 @@
         </div>
       </div>
       <div class="description">
-          <h2 class="accordion-header" id="headingOne">
+          <h2 class="show-description" id="headingOne">
               Show Description
           </h2>
               <p class="mt-4"><%= apiResult.overview %></p>
       </div>
       <p class="mt-4 fs-4 text-light">Rating: <%= apiResult.vote_average %></p>
 
+    <div class="second-section">
       <% if (show?.collectedBy.length > 0) { %>
       <div class="accordion" id="accordion">
         <div class="accordion-item bg-dark">
@@ -70,17 +70,6 @@
         </button> 
       </form>
       <% } %>
-    <% if (userHasShow) { %>
-      <form 
-        class="text-center" 
-        action="/shows/<%= apiResult.id %>/removeFromCollection?_method=PATCH" 
-        method="POST"
-      >
-        <button class="btn btn-danger">
-          Remove From Collection
-        </button>
-      </form>
-    <% } %>
     
     <div class="container">
       <% if (!userHasReviewed && userHasShow) { %>
@@ -155,7 +144,25 @@
       <% } %>
       
     </div>
-  </section>
+
+
+  <br>
+  <br>
+  <% if (userHasShow) { %>
+    <form 
+      class="text-center" 
+      action="/shows/<%= apiResult.id %>/removeFromCollection?_method=PATCH" 
+      method="POST"
+    >
+      <button class="button-31 btn-danger">
+        Remove From Collection
+      </button>
+    </form>
+  <% } %>
+
+  <br>
+  <br>
+</div>
 </main>
 
 <%- include('../partials/footer') %>
