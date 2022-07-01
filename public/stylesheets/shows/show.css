@@ -148,7 +148,7 @@ textarea {
   font-size: 1.3em;
   font-weight: 700;
   line-height: 1.5;
-  margin: 0;
+  margin-bottom: 1vh;
   max-width: none;
   min-height: 44px;
   min-width: 100%;
