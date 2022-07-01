@@ -79,6 +79,9 @@ hr {
   background-color: rgb(207, 57, 57);
 }
 
+.google-button {
+  height: 3vh;
+}
 
 .button-17 {
   align-items: center;
