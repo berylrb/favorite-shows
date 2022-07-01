@@ -35,3 +35,11 @@ In its current state, this app is a mere imagining of its potential and future m
 - [ ] allow users to search for shows in other users' lists
 - [ ] allow users to search for a show based on keyword
 - [ ] fix @media alignment on contact page for socials icons
+
+
+## Special Thanks:
+Special thanks to <a href="https://www.themoviedb.org/">the Movie Database API</a> which enables this app to function. 
+
+I'd also like to thank all of the instructors, IAs, and TAs for supporting me both emotionally and academically during the construction of this app. 
+
+A very special thank you also to my supportive classmates (Scott Semlitz, Jordin Huang, Coco Kim, Rachel Kinzel, and Mauricio Lovera to name a few (but not all!)). 

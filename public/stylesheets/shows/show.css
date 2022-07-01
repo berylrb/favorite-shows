@@ -17,6 +17,7 @@ select {
   width: 100%;
   margin-bottom: 2vh;
   margin-top: 2vh;
+  text-align: center;
 }
 
 textarea {
