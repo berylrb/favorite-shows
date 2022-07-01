@@ -88,7 +88,7 @@
 <br>
     <div class="container">
       <% if (!userHasReviewed && userHasShow) { %>
-        <form action="/reviews/<%= show._id %>" method="POST">
+        <form class="review-form" action="/reviews/<%= show._id %>" method="POST">
           <div class="mb-3 mt-4">
             <label 
               for="exampleFormControlTextarea1" 
@@ -96,24 +96,24 @@
             >
               Leave a review:
             </label>
+            <select 
+              name="rating" 
+              class="form-select" 
+            >
+              <option value="1">1 🌟</option>
+              <option value="2">2 🌟</option>
+              <option value="3">3 🌟</option>
+              <option value="4">4 🌟</option>
+              <option value="5">5 🌟</option>
+            </select> 
             <textarea 
               name="content" 
               class="form-control" 
               id="exampleFormControlTextarea1" 
               rows="3"
-            ></textarea>
-            <select 
-              name="rating" 
-              class="form-select" 
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>        
+            ></textarea>       
           </div>
-          <button class="btn btn-warning"type="submit">Add Review</button>
+          <button class="button-32 btn-warning"type="submit">Add Review</button>
         </form> 
       <% } %>
       

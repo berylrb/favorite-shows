@@ -7,12 +7,66 @@
 	src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
 }
 
+.review-form {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 2vh;
+}
+
+
+.button-32 {
+  background-color: rgb(207, 57, 57);
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 44px;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 9px 20px 8px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.button-32:hover,
+.button-32:focus {
+  opacity: .75;
+}
 
 
 .show-name {
-  text-align: center;
+  text-align: left;
+  position: relative;
+  display: flex;
   font-family: 'Raleway', Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  margin-left: 15vw;
+  width: 35vw;
 }
 
 
@@ -21,6 +75,7 @@
   height: 82%;
   margin-bottom: 3vh;
   border: 1px solid white;
+  margin-top: -3vh;
 }
 
 .container {
@@ -28,12 +83,12 @@
   flex-wrap: wrap;
   gap: 2.5rem;
   justify-content: center;
+  margin-top: -3vh;
+
 }
 
 .wrapper {
-  border: 10px solid rgb(11, 18, 11);
   width: 28vw;
-  background-color: black;
   color: white;
 }
 
@@ -50,7 +105,6 @@
 .accordion-header {
   color: white;
   font-size: 2em;
-  border: 1px solid white;
 }
 
 .collector img {
