@@ -43,10 +43,11 @@
           <h2 class="accordion-header" id="headingTwo">
               This show appears in <%= show?.collectedBy.length %> user Queues:
           </h2>
+          <div class="all-collectors">
               <% show?.collectedBy.forEach(profile => { %>
                 <div class="collector">
-                  <a href="/profiles/<%= profile._id %>" class="text-white">
-                    <p>
+                  <a class="text-white" href="/profiles/<%= profile._id %>" class="text-white">
+                    <p class="white-text">
                       <img 
                         src="<%= profile.avatar %>" 
                         alt="<%= profile.name %>'s avatar"
@@ -54,11 +55,13 @@
                         width="50px"
                         height="50px"
                       >
+                      <br>
                       <%= profile.name %>
                     </p>
                   </a>
                 </div>
               <% }) %>
+            </div>
             </div>
       </div>
     </div>

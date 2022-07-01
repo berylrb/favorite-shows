@@ -110,7 +110,22 @@ textarea {
 
 .collector img {
   margin-top: 2vh;
+  border: 1px white solid;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.collector {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-left: 2vw;
+  width: 10vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .description {
@@ -181,9 +196,20 @@ textarea {
   flex-direction: column;
   position: relative;
   border: 1px solid black;
-  width: 50vw;
+  width: 35vw;
   justify-content: center;
   align-items: center;
   margin-top: 5vh;
   margin-bottom: 5vh;
+}
+
+.all-collectors {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 5px;
+}
+
+.white-text {
+  color: white;
 }
