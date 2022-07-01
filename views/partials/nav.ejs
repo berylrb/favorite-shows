@@ -10,22 +10,23 @@
       tv
       </span>
       <hr>
+      <h1>Queue</h1>
+      <hr>
 
     <% if (user) { %>
-      <h1>Queue</h1>
       <a 
       href="/profiles" <%- title === 'Community' ? 'class="active"' : '' %>
     >
       COMMUNITY
     </a>
     <br>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
       <form action="/shows/search" method="POST">
         <input type="text" name="search" placeholder="Search for Show" autocomplete="off">
         <button type="submit">Search</button>
       </form>
+      <a href="/auth/logout">
+        <button type="submit">Logout</button>
+      </a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button type="submit" class="siwg">
