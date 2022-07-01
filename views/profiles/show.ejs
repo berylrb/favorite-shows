@@ -61,19 +61,21 @@
 <div class="container">
     <% shows.forEach(show => { %>
           <div class="wrapper">
-              <% if (show.imageUrl) { %>
-              <img class="poster" src="<%= show.imageUrl %>" alt="">
-            <% } else { %>
-              <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
-            <% } %>
-            <div class="card-body">
-              <p class="card-title fs-4 text-light"><%= show.name %></p>
-              <a 
-                href="/shows/<%= show.mdbId %>" 
-                class="btn btn-primary"
-              >
-                Details
-              </a>
+            <div class="poster-card">
+                <% if (show.imageUrl) { %>
+                <img class="poster" src="<%= show.imageUrl %>" alt="">
+              <% } else { %>
+                <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
+              <% } %>
+              <div class="card-body">
+                <p class="card-title fs-4 text-light"><%= show.name %></p>
+                <a 
+                  href="/shows/<%= show.mdbId %>" 
+                  class="btn btn-primary"
+                >
+                  Details
+                </a>
+              </div>
             </div>
             </div>
           </div>

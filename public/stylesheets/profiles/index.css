@@ -19,12 +19,16 @@ img {
   position: relative;
   flex-wrap: wrap;
   border: 1px solid black;
-  max-height: 40vh;
+  border-radius: 10px;
+  max-height: 35vh;
   max-width: 22vw;
-  height: 40vh;
+  height: 35vh;
   width: 20vw;
   text-align: center;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .card-title {
   font-size: 2em;
@@ -43,4 +47,5 @@ img {
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
+  align-items: center;
 }

@@ -27,6 +27,7 @@
       </div>
       <p class="mt-4 fs-4 text-light">Rating: <%= apiResult.vote_average %></p>
 
+      <% if (show?.collectedBy.length > 0) { %>
       <div class="accordion" id="accordion">
         <div class="accordion-item bg-dark">
           <h2 class="accordion-header" id="headingTwo">
@@ -51,6 +52,7 @@
             </div>
       </div>
     </div>
+    <% } %>
     <% if (!userHasShow) { %>
     <form 
         class="text-center" 
