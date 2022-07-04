@@ -1,3 +1,52 @@
+/* .image-avi {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  margin-top: 3vh;
+  height: 17vh;
+  align-items: center;
+}
+
+
+
+.profile-info {
+  display: flex;
+  height: 30vh;
+}
+
+.image-box {
+  padding: 2px;
+  border: 1px solid black;
+}
+
+.profile-table {
+  border: 1px solid black;
+  padding: 15px;
+  display: flex;
+  position: relative;
+}
+
+
+
+.profile-text {
+  display: flex;
+  position: relative;
+  height: 20vh;
+  flex-direction: column;
+  max-width: 30vw;
+}
+
+.profile-name {
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.name-value {
+  font-size: 1.8em;
+} */
+
+
 .image-avi {
   display: flex;
   flex-direction: column;
@@ -16,26 +65,38 @@
 .profile-table {
   border: 1px solid black;
   padding:5px;
+  min-width: 32vw;
 }
 
 .profile-name {
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: 600;
 }
 
 .name-value {
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
+
+
 .edit-profile {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 600;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  display: flex;
   text-decoration: none;
-  color: red;
+  color: rgb(169, 2, 2);
   margin-top: 1.5vh;
-  margin-bottom: 2vh;
+  margin-bottom: 10vh;
   border: 1px solid rgb(169, 2, 2);
-  padding: 4px;
+  outline: medium none;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(224, 72, 72, 0.121);
+  min-width: 30vw;
+
 }
 
 .edit-profile:hover {
@@ -45,15 +106,17 @@
 
 .width-all {
   width: 100vw;
-  margin-top: -.5vh;
+  margin-top: 2.5vh;
   margin-bottom: 1.5vh;
+  position: relative;
+  display: flex;
 }
 
 .card-body {
   text-align: center;
 }
 
-.bg-red {
+.bg-white {
   background-color: white;
   padding: 40px;
 
@@ -70,7 +133,7 @@
   display: flex;
   position: relative;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 4.5rem;
   justify-content: center;
 }
 

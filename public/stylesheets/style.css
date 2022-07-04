@@ -56,6 +56,16 @@ nav > a:hover {
   color: rgb(197, 196, 196);
 }
 
+.search-input {
+  padding: 5px;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 2px 3px -1px,rgba(0, 0, 0, .14) 0 3px 5px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+}
+
 main {
   display: flex;
   align-items: center;

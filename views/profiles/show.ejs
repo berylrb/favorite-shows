@@ -4,6 +4,7 @@
 
 <main>
   <!-- profile info section -- email, name, avatar, edit button -->
+  <div class="profile-info">
   <div class="image-avi">
     <section class="bg-dark text-secondary px-4 py-5 text-center">
       <% if (profile.avatar) { %>
@@ -19,18 +20,19 @@
         >
       <% } %> 
   </div>
+  <div class="profile-text">
     <h1 class="display-5 fw-bold text-white pt-2"><%= profile.name %></h1>
     <div class="py-4">
       <table class="profile-table table-dark table-striped align-middle">
         <tbody>
           <% if (user.profile.equals(profile._id)) { %>
             <tr>
-              <td class="profile-name">Email:</td>
+              <td class="profile-name">Email Address:</td>
               <td class="name-value"><%= user.email %></td>
             </tr>
           <% } %>
           <tr>
-            <td class="profile-name">Name:</td>
+            <td class="profile-name">Display Name:</td>
             <td class="name-value"><%= profile.name %></td>
           </tr>
         </tbody>
@@ -45,6 +47,8 @@
         Edit Profile
       </a>
     <% } %>
+  </div>
+  </div>
   </section>
   <hr class="width-all">
 
