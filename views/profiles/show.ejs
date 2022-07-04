@@ -3,6 +3,7 @@
 <%- include('../partials/nav') %>
 
 <main>
+  <!-- profile info section -- email, name, avatar, edit button -->
   <div class="image-avi">
     <section class="bg-dark text-secondary px-4 py-5 text-center">
       <% if (profile.avatar) { %>
@@ -19,7 +20,7 @@
       <% } %> 
   </div>
     <h1 class="display-5 fw-bold text-white pt-2"><%= profile.name %></h1>
-    <div class="container py-4">
+    <div class="py-4">
       <table class="profile-table table-dark table-striped align-middle">
         <tbody>
           <% if (user.profile.equals(profile._id)) { %>
@@ -37,41 +38,41 @@
     </div>
     <% if (user.profile.equals(profile._id)) { %>
       <a 
-        class="btn btn-edit"
+        class="edit-profile btn btn-edit"
         role="button" 
         href="/profiles/<%= profile._id %>/edit"
       >
         Edit Profile
       </a>
     <% } %>
-
-    
   </section>
-  <section class="bg-light pt-3">
-<div class="container">
-    <% shows.forEach(show => { %>
-          <div class="wrapper">
-            <div class="poster-card">
-                <% if (show.imageUrl) { %>
-                <img class="poster" src="<%= show.imageUrl %>" alt="">
-              <% } else { %>
-                <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
-              <% } %>
-              <div class="card-body">
-                <p class="show-title fs-4 text-light"><%= show.name %></p>
-                <a 
-                  href="/shows/<%= show.mdbId %>" 
-                  class="deets-btn btn-primary"
-                >
-                  DETAILS
-                </a>
+  <hr class="width-all">
+
+
+<!-- collected shows section -->
+  <section class="bg-white pt-3">
+    <div class="container">
+      <% shows.forEach(show => { %>
+
+                <div class="wrapper">
+                  <div class="card-body">
+                    <p class="show-title fs-4 text-light"><%= show.name %></p>
+                    <% if (show.imageUrl) { %>
+                    <img class="poster" src="<%= show.imageUrl %>" alt="">
+                  <% } else { %>
+                    <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
+                  <% } %>
+                    <a 
+                      href="/shows/<%= show.mdbId %>" 
+                      class="deets-btn btn-primary"
+                    >
+                      DETAILS
+                    </a>
+                </div>
               </div>
-            </div>
-            </div>
-          </div>
-        </div>
+
+
       <% }) %>
-      </div>
     </div>
   </section>
 </main>
