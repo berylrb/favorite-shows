@@ -1,7 +1,31 @@
 .image-avi {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
   margin-top: 5vh;
   max-height: 10vh;
+  align-items: center;
 }
+
+.image-box {
+  border: 1px solid black;
+}
+
+.profile-table {
+  border: 1px solid black;
+  padding:5px;
+}
+
+.profile-name {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.name-value {
+  font-size: 1.2em;
+}
+
 
 
 .poster {

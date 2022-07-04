@@ -3,51 +3,41 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <section class="bg-dark text-secondary px-4 py-5 text-center">
-    <% if (profile.avatar) { %>
-      <img
-        class="image-avi" 
-        src="<%= profile.avatar %>" 
-        alt="<%= profile.name %>'s avatar"
-      >
-    <% } else {%>
-      <img
-        src="/images/icons/user.png" 
-        alt="A placeholder avatar"
-      >
-    <% } %> 
+  <div class="image-avi">
+    <section class="bg-dark text-secondary px-4 py-5 text-center">
+      <% if (profile.avatar) { %>
+        <img
+          class="image-avi image-box" 
+          src="<%= profile.avatar %>" 
+          alt="<%= profile.name %>'s avatar"
+        >
+      <% } else {%>
+        <img
+          src="/images/icons/user.png" 
+          alt="A placeholder avatar"
+        >
+      <% } %> 
+  </div>
     <h1 class="display-5 fw-bold text-white pt-2"><%= profile.name %></h1>
     <div class="container py-4">
-      <table class="table table-dark table-striped align-middle">
+      <table class="profile-table table-dark table-striped align-middle">
         <tbody>
           <% if (user.profile.equals(profile._id)) { %>
             <tr>
-              <td>Google Email:</td>
-              <td><%= user.email %></td>
+              <td class="profile-name">Email:</td>
+              <td class="name-value"><%= user.email %></td>
             </tr>
           <% } %>
           <tr>
-            <td>Name:</td>
-            <td><%= profile.name %></td>
-          </tr>
-          <tr>
-            <td>Avatar URL:</td>
-            <td>
-              <a href="<%= profile.avatar %>">
-                <%= profile.avatar.substring(0, 35) %>
-                <% if (profile.avatar.length > 35) { %>
-                ...
-                <% } %>
-              </a>
-            </td>
+            <td class="profile-name">Name:</td>
+            <td class="name-value"><%= profile.name %></td>
           </tr>
         </tbody>
       </table>
     </div>
     <% if (user.profile.equals(profile._id)) { %>
-      <%# This is where we'll add the UI to edit a profile %> 
       <a 
-        class="btn btn-warning"
+        class="btn btn-edit"
         role="button" 
         href="/profiles/<%= profile._id %>/edit"
       >
