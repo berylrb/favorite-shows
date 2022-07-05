@@ -16,7 +16,7 @@
       <hr>
 
     <% if (user) { %>
-      <a 
+      <a class="nav-link"
       href="/profiles" <%- title === 'Community' ? 'class="active"' : '' %>
     >
       COMMUNITY
@@ -26,7 +26,7 @@
         <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off" required>
         <button class="button-17" type="submit">Search</button>
       </form>
-      <a href="/auth/logout">LOGOUT</a>
+      <a class="nav-link" href="/auth/logout">LOGOUT</a>
     <% } else { %>
       <a href="/auth/google" class="siwg-link">
         <button class="button-17" type="submit" class="siwg">
