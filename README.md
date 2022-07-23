@@ -9,14 +9,13 @@ Additionally, check out the trello board used for planning this app at <a href="
 
 ## App Preview
 
-<img src="https://i.ibb.co/93YTZ2L/Screen-Shot-2022-07-01-at-11-56-01-AM.png">
+<img src="https://i.ibb.co/SNFbGGD/Screen-Shot-2022-07-23-at-4-52-21-PM.png">
 
 <hr>
 
 <img src="https://i.ibb.co/Y8KF4yF/Screen-Shot-2022-07-01-at-11-58-34-AM.png">
 
 <hr>
-
 
 
 
@@ -42,6 +41,10 @@ Additionally, check out the trello board used for planning this app at <a href="
 
 In its current state, this app is a mere imagining of its potential and future manifestation. Here are some future feature additions to look forward to:
 
+- [x] set up api call for trending shows
+- [x] set up api call for recommended shows
+- [x] hover over poster cards to see show description 
+- [ ] add a slider that only displays 3-4 poster cards at once
 - [ ] minor css adjustments
 - [ ] add custom animations
 - [ ] allow users to create multiple lists
