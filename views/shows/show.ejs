@@ -6,6 +6,24 @@
       <h1 class="show-name">
         <%= apiResult.name %>
       </h1>
+      <% if (apiResult.tagline) { %>
+        <div class="tagline-div">
+          <h2 class="tagline-h2">
+            <%= apiResult.tagline %></p>
+          </h2>
+        </div>
+        <% } %>
+        <% if (apiResult.number_of_seasons) { %>
+          <div class="seasons-div">
+            <h2 class="number-szns">
+              Number of seasons:
+            </h2>
+            <p class="season-p"><%= apiResult.number_of_seasons %></p>
+          </div>
+
+          <% } %>
+
+      <br>
       <div class="container py-4">
         <div class="wrapper">
           <div class="container">
@@ -26,12 +44,26 @@
             <%= apiResult.overview %>
           </p>
         </div>
+        <% if (apiResult.homepage) { %>
+        <div class="link-to-show">
+          <h2 class="link-to-show-h2">
+            Watch <%= apiResult.name %> <a href="<%= apiResult.homepage %>">here</a>
+          </h2>
+        </div>
+        <% } %> 
+        
+          
         <p class="mt-4 fs-4 text-light">Rating: <%= apiResult.vote_average %>
         </p>
+
+        
+
         <div class="similar-shows-div">
           <a class="text-black" href="/shows/<%= apiResult.id %>/similar">Discover shows that are similar to <%= apiResult.name %> </a>
         </div>
         
+
+       
         
         <div class="delete-btn">
           <% if (userHasShow) { %>
