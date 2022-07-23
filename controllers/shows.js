@@ -69,7 +69,7 @@ function getPopular(req, res) {
         results: response.data.results
       })
     })
-    console.log('popular', response.data)
+    
     .catch(error => {
       console.log(error)
       res.redirect('/')

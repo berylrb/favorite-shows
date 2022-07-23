@@ -2,3 +2,9 @@ img {
   margin-top: 5vh;
   height: 10vh;
 }
+
+.popular {
+  padding: 20px;
+  font-size: 1.5em;
+  color: blueviolet
+}
