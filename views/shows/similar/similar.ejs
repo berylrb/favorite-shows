@@ -1,26 +1,50 @@
 <%- include('../../partials/html-head') %>
-<%- include('../../partials/nav') %>
-<link rel="stylesheet" href="/stylesheets/shows/similar/similarShows.css" />
+  <%- include('../../partials/nav') %>
+    <link rel="stylesheet" href="/stylesheets/shows/similar/similarShows.css" />
 
 
-<main>
-  <h1>Similar Shows</h1>
-  <% if (user?.profile.avatar) { %>
-    <div class="container">
-      <% simResults.forEach(result => { %>
-        <!-- make div a tag -->
-        <div class="wrapper"> 
-          <h2><%= result.name %></h2>
-          <% if (result.poster_path) { %>
-            <a href="/shows/<%= result.id %>" class="btn btn-primary">
-            <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
-          <% } else { %>
-            <a href="/shows/<%= result.id %>" class="btn btn-primary">
-            <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt=""></a>
-          <% } %>
+    <main>
+      <h1>Similar Shows</h1>
+      <% if (user?.profile.avatar) { %>
+        <div class="container">
+          <% simResults.forEach(result=> { %>
+            <!-- make div a tag -->
+            <div class="wrapper">
+              <h2>
+                <%= result.name %>
+              </h2>
+              <% if (result.poster_path) { %>
+                <a href="/shows/<%= result.id %>" class="btn btn-primary">
+                  <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
+                <% } else { %>
+                  <a href="/shows/<%= result.id %>" class="btn btn-primary">
+                    <img class="poster"
+                      src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
+                      alt=""></a>
+                  <% } %>
+            </div>
+            <% }) %>
         </div>
-      <% }) %>
-  </div>
-  <% } %>
-</main>
-<%- include('../../partials/footer') %>
+        
+            <% reqResults.forEach(result=> { %>
+              <!-- make div a tag -->
+              <div class="wrapper">
+                <h2>
+                  <%= result.name %>
+                </h2>
+                <% if (result.poster_path) { %>
+                  <a href="/shows/<%= result.id %>" class="btn btn-primary">
+                    <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
+                  <% } else { %>
+                    <a href="/shows/<%= result.id %>" class="btn btn-primary">
+                      <img class="poster"
+                        src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
+                        alt=""></a>
+                    <% } %>
+              </div>
+              <% }) %>
+          </div>
+
+          <% } %>
+    </main>
+    <%- include('../../partials/footer') %>

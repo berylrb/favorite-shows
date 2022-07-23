@@ -3,10 +3,12 @@ import axios from "axios"
 
 const router = Router()
 
+
+
 router.get('/', function (req, res) {
-  axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`)
+  axios.get(`https://api.themoviedb.org/3/trending/tv/day?api_key=${process.env.API_KEY}`)
     .then(response => {
-      res.render('shows/popular', {
+      res.render('index', {
         title: 'Welcome to Queue',
         results: response.data.results
       })

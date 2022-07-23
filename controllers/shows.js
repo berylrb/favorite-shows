@@ -1,6 +1,11 @@
 import { Show } from "../models/show.js"
 import { ShowReview } from '../models/showReview.js'
 import axios from "axios"
+import { response } from "express"
+
+
+
+
 
 function showSearch(req, res) {
   console.log('this is reqbody', req.body.search)
@@ -60,24 +65,38 @@ function getSimilar(req, res) {
 })
 }
 
+function getRecs(req, res) {
+  console.log('req body rec', req.params.id)
+  axios.get(`https://api.themoviedb.org/3/tv/${req.params.id}/recommendations?api_key=${process.env.API_KEY}&language=en-US&page=1`)
+  .then(response => {
+    console.log('response data', response.data.results)
+    res.render('shows/recommended', {
+      title: 'Recommended Shows',
+      reqResults: response.data.results
+  })
+})
+.catch(error => {
+  console.log(error)
+  res.redirect('/')
+})
+}
 
-// function getPopular(req, res) {
-//   axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`)
-//     .then(response => {
-//       res.render('shows/popular', {
-//         title: 'Popular Shows',
-//         results: response.data.results
-//       })
+
+// function getTrailer(req, res) {
+//   console.log('req body video', req.params.id)
+//   axios.get(`https://api.themoviedb.org/3/tv/${req.params.id}/videos?api_key=${process.env.API_KEY}&language=en-US`)
+//   .then(response => {
+//     console.log('video data', response.data.results)
+//     res.render('shows/trailer', {
+//       title: 'Trailer Results',
+//       vidResults: response.data.results
 //     })
-    
-//     .catch(error => {
-//       console.log(error)
-//       res.redirect('/')
-//     })
+//   })
+//   .catch(error => {
+//     console.log(error)
+//     res.redirect('/')
+//   })
 // }
-
-
-
 
 
 function addToCollection(req, res) {
@@ -127,5 +146,6 @@ export {
   addToCollection,
   removeFromCollection,
   getSimilar,
+  getRecs
   // getPopular
 }

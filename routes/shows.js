@@ -8,6 +8,7 @@ const router = Router()
 router.post('/search', isLoggedIn, showsCtrl.showSearch)
 router.get('/:id', isLoggedIn, showsCtrl.show)
 router.get('/:id/similar', isLoggedIn, showsCtrl.getSimilar)
+router.get('/:id/recommended', isLoggedIn, showsCtrl.getRecs)
 router.patch("/:id/addToCollection", isLoggedIn, showsCtrl.addToCollection)
 router.patch("/:id/removeFromCollection", isLoggedIn, showsCtrl.removeFromCollection)
 

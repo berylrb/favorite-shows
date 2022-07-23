@@ -1,37 +1,40 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-  <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+<% if (!user) { %>
+  <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
-  
-</head>
-<body>
-  <nav>
-    <span class="material-symbols-outlined">
-      tv
-      </span>
-      <hr>
-      <a href="/">
-      <h1>Queue</h1>
-      </a>
-      <hr>
 
-    <% if (user) { %>
-      <a class="nav-link"
-      href="/profiles" <%- title === 'Community' ? 'class="active"' : '' %>
-    >
-      COMMUNITY
-    </a>
-    <br>
-      <form action="/shows/search" method="POST">
-        <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off" required>
-        <button class="button-17" type="submit">Search</button>
-      </form>
-      <a class="nav-link" href="/auth/logout">LOGOUT</a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button class="button-17" type="submit" class="siwg">
-          Login
-        </button>
-      </a>
-    <% } %>
-  </nav>
+    </head>
+
+    <body>
+      <nav>
+        <div class="nav-container">
+          <a class="nav-link" href="/">
+            <h1 class="queue-h1">Queue+</h1>
+          </a>
+
+          <% if (user) { %>
+            <a class="nav-link" href="/profiles" <%- title==='Community' ? 'class="active"' : '' %>
+              >
+              COMMUNITY
+            </a>
+            <% } else { %>
+              <a href="/auth/google" class="siwg-link">
+                <button class="button-17" type="submit" class="siwg">
+                  Login
+                </button>
+              </a>
+              <% } %>
+              <a class="nav-link" href="/auth/logout">LOGOUT</a>
+            <form action="/shows/search" method="POST">
+              <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off"
+                required>
+              <button class="button-17" type="submit">Search</button>
+            </form>
+            
+            
+                <div class="powered-by-div">
+                  <img class="db-img" src="/images/moviedb/tmdb.svg" alt="">
+                </div>
+        </div>
+      </nav>

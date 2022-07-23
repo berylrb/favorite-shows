@@ -26,29 +26,10 @@ html {
 }
 
 body {
-  background-color: white;
-  /* Use a system font, if none are available use an available sans-sarif font */
+  background-image: linear-gradient(to top left, #138756 10%, #1a5972, #020823);
+  width: 100vw;
   font-family: 'Raleway', Arial, sans-serif;
-  margin: 0;
-}
 
-body > nav {
-  grid-area: nav;
-  background-color: rgb(207, 57, 57);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 0 20px 0 30px;
-  border-bottom: 2px #424748 solid;
-  color: white;
-}
-
-nav > a {
-  margin: 20px;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: #ffffff;
 }
 
 
@@ -56,8 +37,35 @@ nav > a:hover {
   color: rgb(197, 196, 196);
 }
 
+.db-img {
+  width: 15em;
+  margin: 0 40px 0 0;
+}
+
+.nav-container {
+  grid-area: nav;
+  background-color: #0208237a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border-bottom: 1px rgba(255, 255, 255, 0.444) solid;
+  color: white;
+}
+
 .nav-link {
-  font-size: 14px;
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 1.4em;
+  position: relative;
+  top: 0;
+  transition: top ease 0.2s;
+}
+
+.nav-link:hover {
+  top: -3px;
 }
 
 .search-input {
@@ -77,11 +85,11 @@ main {
   flex-direction: column;
 }
 
-h1 {
-  font-family: 'Raleway', Arial, sans-serif;
-  margin-top: 4vh;
-  font-size: 3.6rem;
+.queue-h1 {
+  font-size: 4em;
+  letter-spacing: 5.5px;
 }
+
 
 .material-symbols-outlined {
   text-align: left;
@@ -112,7 +120,7 @@ hr {
   font-family: "Google Sans",Roboto,Arial,sans-serif;
   font-size: 14px;
   font-weight: 500;
-  height: 3vh;
+  height: 2em;
   justify-content: center;
   letter-spacing: .25px;
   line-height: normal;

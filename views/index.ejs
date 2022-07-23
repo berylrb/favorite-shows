@@ -1,39 +1,46 @@
 <%- include('./partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/index.css" />
-<%- include('./partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/index.css" />
+  <%- include('./partials/nav') %>
 
-<main>
+    <main>
 
+          <div class="landing-container">
+            <div class="h1-div">
+              <h1>Trending Shows</h1>
+            </div>
 
-  <h1>Popular Shows</h1>
-  <div class="container">
-    <% results.forEach(result => { %>
-      <!-- make div a tag -->
-      <div class="wrapper"> 
-        <h2><%= result.name %></h2>
-        <% if (result.poster_path) { %>
-          <a href="/shows/<%= result.id %>" class="btn btn-primary">
-          <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
-        <% } else { %>
-          <a href="/shows/<%= result.id %>" class="btn btn-primary">
-          <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt=""></a>
-        <% } %>
-      </div>
-    <% }) %>
-  
-  <br>
-  <br>
-  
-  <% if (user) { %>
-    <form class="search-bar" action="/shows/search" method="POST">
-      <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off" required>
-      <button class="button-17" type="submit">Search</button>
-    </form>
-    <% } %>
-  <hr>
-  <h3>Powered by:</h3>
-  <img src="/images/moviedb/movie-db.svg" alt="">
+            <div class="container">
+              <% results.forEach(result=> { %>
 
-</main>
+                <a href="/shows/<%= result.id %>" class="btn btn-primary">
+                  <div class="wrapper">
+                    <div class="overlay">
+                      <div class="desc-wrap">
+                        <%= result.overview %>
+                      </div>
+                    </div>
+                    <div class="poster-div">
+                      <% if (result.poster_path) { %>
 
-<%- include('./partials/footer') %>
+                        <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt="">
+                        <% } else { %>
+                          <img class="poster"
+                            src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
+                            alt="">
+                          <% } %>
+                    </div>
+                    <div class="title-description-div">
+                      <h2 class="show-name">
+                        <%= result.name %>
+                      </h2>
+
+                    </div>
+                  </div>
+                </a>
+                <% }) %>
+
+                  
+            </div>
+    </main>
+
+    <%- include('./partials/footer') %>
