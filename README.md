@@ -11,13 +11,6 @@ Additionally, check out the trello board used for planning this app at <a href="
 
 <img src="https://i.ibb.co/SNFbGGD/Screen-Shot-2022-07-23-at-4-52-21-PM.png">
 
-<hr>
-
-<img src="https://i.ibb.co/Y8KF4yF/Screen-Shot-2022-07-01-at-11-58-34-AM.png">
-
-<hr>
-
-
 
 
 ## Some Technologies Used:
