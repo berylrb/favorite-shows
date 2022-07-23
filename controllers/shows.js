@@ -61,20 +61,20 @@ function getSimilar(req, res) {
 }
 
 
-function getPopular(req, res) {
-  axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`)
-    .then(response => {
-      res.render('shows/popular', {
-        title: 'Popular Shows',
-        results: response.data.results
-      })
-    })
+// function getPopular(req, res) {
+//   axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`)
+//     .then(response => {
+//       res.render('shows/popular', {
+//         title: 'Popular Shows',
+//         results: response.data.results
+//       })
+//     })
     
-    .catch(error => {
-      console.log(error)
-      res.redirect('/')
-    })
-}
+//     .catch(error => {
+//       console.log(error)
+//       res.redirect('/')
+//     })
+// }
 
 
 
@@ -127,5 +127,5 @@ export {
   addToCollection,
   removeFromCollection,
   getSimilar,
-  getPopular
+  // getPopular
 }

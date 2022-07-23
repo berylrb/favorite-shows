@@ -4,7 +4,7 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-router.get('/popular', isLoggedIn, showsCtrl.getPopular)
+// router.get('/popular', isLoggedIn, showsCtrl.getPopular)
 router.post('/search', isLoggedIn, showsCtrl.showSearch)
 router.get('/:id', isLoggedIn, showsCtrl.show)
 router.get('/:id/similar', isLoggedIn, showsCtrl.getSimilar)

@@ -3,20 +3,33 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Welcome to Queue</h1>
 
+
+  <h1>Popular Shows</h1>
+  <div class="container">
+    <% results.forEach(result => { %>
+      <!-- make div a tag -->
+      <div class="wrapper"> 
+        <h2><%= result.name %></h2>
+        <% if (result.poster_path) { %>
+          <a href="/shows/<%= result.id %>" class="btn btn-primary">
+          <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
+        <% } else { %>
+          <a href="/shows/<%= result.id %>" class="btn btn-primary">
+          <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt=""></a>
+        <% } %>
+      </div>
+    <% }) %>
+  
+  <br>
+  <br>
+  
   <% if (user) { %>
-  <form class="search-bar" action="/shows/search" method="POST">
-    <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off" required>
-    <button class="button-17" type="submit">Search</button>
-  </form>
-  <% } %>
-
-  <a href="/shows/popular" class="popular">popular shows</a>
-  
-  <br>
-  <br>
-  
+    <form class="search-bar" action="/shows/search" method="POST">
+      <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off" required>
+      <button class="button-17" type="submit">Search</button>
+    </form>
+    <% } %>
   <hr>
   <h3>Powered by:</h3>
   <img src="/images/moviedb/movie-db.svg" alt="">
