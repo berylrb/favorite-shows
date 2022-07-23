@@ -3,7 +3,7 @@ import { ShowReview } from '../models/showReview.js'
 import axios from "axios"
 
 function showSearch(req, res) {
-  console.log(req.body)
+  console.log('this is reqbody', req.body.search)
   axios.get(`https://api.themoviedb.org/3/search/tv?api_key=${process.env.API_KEY}&language=en-US&page=1&query=${req.body.search}`)
   .then(response => {
     res.render('shows/search', {
@@ -42,6 +42,43 @@ function show(req, res) {
     res.redirect('/')
   })
 }
+
+
+function getSimilar(req, res) {
+  console.log('req body similar', req.params.id)
+  axios.get(`https://api.themoviedb.org/3/tv/${req.params.id}/similar?api_key=${process.env.API_KEY}&language=en-US&page=1`)
+  .then(response => {
+    console.log('response data', response.data.results)
+    res.render('shows/similar/similar', {
+      title: 'Similar Shows',
+      simResults: response.data.results
+  })
+})
+.catch(error => {
+  console.log(error)
+  res.redirect('/')
+})
+}
+
+
+function getPopular(req, res) {
+  axios.get(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}&language=en-US&page=1`)
+    .then(response => {
+      res.render('shows/popular', {
+        title: 'Popular Shows',
+        results: response.data.results
+      })
+    })
+    console.log('popular', response.data)
+    .catch(error => {
+      console.log(error)
+      res.redirect('/')
+    })
+}
+
+
+
+
 
 function addToCollection(req, res) {
   req.body.collectedBy = req.user.profile._id
@@ -88,5 +125,7 @@ export {
   showSearch,
   show,
   addToCollection,
-  removeFromCollection
+  removeFromCollection,
+  getSimilar,
+  getPopular
 }

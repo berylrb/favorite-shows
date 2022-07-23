@@ -53,7 +53,7 @@
   position: relative;
   justify-content: center;
   margin-top: 3vh;
-  max-height: 10vh;
+  max-height: 15vh;
   align-items: center;
 }
 
@@ -65,7 +65,7 @@
 .profile-table {
   border: 1px solid black;
   padding:5px;
-  min-width: 32vw;
+  min-width: 30vw;
 }
 
 .profile-name {
