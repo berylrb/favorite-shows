@@ -22,7 +22,10 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid #4a4a4a1c;
+  filter: saturate(70%);
+  filter: brightness(85%);
+  margin: 20px 0 0 0;
 }
 
 .container {

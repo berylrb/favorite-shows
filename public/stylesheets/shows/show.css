@@ -1,12 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600);
+
 @font-face {
-	font-weight: normal;
-	font-style: normal;
-	font-family: 'codropsicons';
-	src: url("../fonts/codropsicons/codropsicons.eot");
-	src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'codropsicons';
+  src: url("../fonts/codropsicons/codropsicons.eot");
+  src: url("../fonts/codropsicons/codropsicons.eot?#iefix") format("embedded-opentype"), url("../fonts/codropsicons/codropsicons.woff") format("woff"), url("../fonts/codropsicons/codropsicons.ttf") format("truetype"), url("../fonts/codropsicons/codropsicons.svg#codropsicons") format("svg");
 }
 
+/* 
 .review-form {
   padding: 50px 100px;
   display: flex;
@@ -26,6 +28,7 @@ textarea {
 }
 
 
+
 .button-32 {
   background-color: rgb(207, 57, 57);
   border-radius: 4px;
@@ -34,7 +37,7 @@ textarea {
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-family: "Farfetch Basis", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.5;
@@ -57,42 +60,123 @@ textarea {
 .button-32:hover,
 .button-32:focus {
   opacity: .75;
+} */
+
+.show-details-page {
+  width: 100vw;
 }
 
-
-.show-name {
-  text-align: left;
-  position: relative;
+.show-info-div {
   display: flex;
-  font-family: 'Raleway', Arial, sans-serif;
-  font-weight: 400;
-  margin-left: 15vw;
-  width: 35vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.poster-desc-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 820px) {
+  .poster-desc-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .description {
+    border: 1px solid #4a4a4a1c;
+    background-color: #1212123d;
+    box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
+    padding: 20px;
+  }
+
+  .overview-p {
+    text-align: center;
+  }
+}
+
+.poster-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 
 .poster {
-  width: 100%;
-  height: 82%;
-  margin-bottom: 3vh;
-  border: 1px solid white;
-  margin-top: 2vh;
+  width: 27em;
+  height: 42em;
+  border: 1px solid #4a4a4a1c;
+  box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
 }
 
-.container {
+.header-description {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2.5rem;
+  flex-direction: column;
   justify-content: center;
-  margin-top: -3vh;
+  align-items: center;
+}
+
+
+.header-tagline-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 0 0;
+}
+
+.show-h1-div {
+  border: 1px solid #4a4a4a1c;
+    background-color: #1212123d;
+    box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
+    padding: 4px 15px;
+}
+
+.show-name {
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.891);
+  font-size: 2.3em;
+  letter-spacing: 2.9px;
+}
+
+.tagline-h2 {
+  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.891);
+  font-weight: 500;
+  font-style: italic;
+}
+
+.rating-p {
+  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.891);
+  font-weight: 500;
 
 }
 
-.wrapper {
-  width: 28vw;
-  color: white;
+
+.description {
+  width: 85%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.overview-p {
+  font-size: 1.4em;
+  color: rgba(255, 255, 255, 0.891);
+  line-height: 1.8;
+}
 
 .accordion {
   display: flex;
@@ -128,9 +212,6 @@ textarea {
   align-items: center;
 }
 
-.description {
-  max-width: 40vw;
-}
 
 .img-fluid {
   max-height: 5vh;
@@ -177,9 +258,6 @@ textarea {
   width: 100vw;
 }
 
-.mt-4 {
-  font-size: 1.5em;
-}
 
 .second-section {
   margin-top: -3.3vh;
@@ -211,8 +289,4 @@ textarea {
   flex-wrap: wrap;
   position: relative;
   margin: 5px;
-}
-
-.white-text {
-  color: white;
 }
