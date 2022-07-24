@@ -4,7 +4,12 @@
 
 
     <main>
+      <div class="community-page"></div>
+      <div class="h1-div">
+        <h1>COMMUNITY</h1>
+      </div>
       <div class="cardContainer">
+
         <% profiles.forEach(profile=> { %>
           <div class="profile-card">
             <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
@@ -22,6 +27,7 @@
           </div>
           </a>
           <% }) %>
+      </div>
       </div>
     </main>
 
