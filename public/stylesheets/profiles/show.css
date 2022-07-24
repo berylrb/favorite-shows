@@ -1,161 +1,118 @@
-/* .image-avi {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-
-  margin-top: 3vh;
-  height: 17vh;
-  align-items: center;
-}
-
-
-
 .profile-info {
   display: flex;
-  height: 30vh;
-}
-
-.image-box {
-  padding: 2px;
-  border: 1px solid black;
-}
-
-.profile-table {
-  border: 1px solid black;
-  padding: 15px;
-  display: flex;
-  position: relative;
-}
-
-
-
-.profile-text {
-  display: flex;
-  position: relative;
-  height: 20vh;
   flex-direction: column;
-  max-width: 30vw;
-}
-
-.profile-name {
-  font-size: 1.8em;
-  font-weight: 600;
-}
-
-.name-value {
-  font-size: 1.8em;
-} */
-
-
-.image-avi {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
-  margin-top: 3vh;
-  max-height: 15vh;
-  align-items: center;
-}
-
-.image-box {
-  padding: 2px;
-  border: 1px solid black;
-}
-
-.profile-table {
-  border: 1px solid black;
-  padding:5px;
-  min-width: 30vw;
-}
-
-.profile-name {
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
-.name-value {
-  font-size: 1.5em;
-}
-
-
-
-.edit-profile {
-  font-size: 1.5em;
-  font-weight: 600;
-  position: relative;
   justify-content: center;
   align-items: center;
+}
+.img-div {
   display: flex;
-  text-decoration: none;
-  color: rgb(169, 2, 2);
-  margin-top: 1.5vh;
-  margin-bottom: 10vh;
-  border: 1px solid rgb(169, 2, 2);
-  outline: medium none;
-  padding: 10px;
-  text-align: center;
-  background-color: rgba(224, 72, 72, 0.121);
-  min-width: 30vw;
-
+  justify-content: center;
+  align-items: center;
+  margin: 5em 0 1em 0;
 }
 
-.edit-profile:hover {
-  color: rgb(169, 2, 2);
-  background-color: rgba(169, 2, 2, 0.121)
-}
-
-.width-all {
-  width: 100vw;
-  margin-top: 2.5vh;
-  margin-bottom: 1.5vh;
-  position: relative;
-  display: flex;
-}
-
-.card-body {
-  text-align: center;
-}
-
-.bg-white {
-  background-color: white;
-  padding: 40px;
-
-}
-
-.poster {
-  width: 100%;
-  height: 82%;
-  margin-bottom: 3vh;
-  border: 1px solid white;
+.img-pic {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
 .container {
   display: flex;
-  position: relative;
   flex-wrap: wrap;
-  gap: 4.5rem;
   justify-content: center;
+  align-items: center;
+  margin: 3em;
 }
 
 .wrapper {
-  border: 10px solid rgb(11, 18, 11);
-  width: 28vw;
-  background-color: black;
-  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 27em;
+  height: 42em;
+  margin: 15px;
+  padding: 20px;
+  border: 1px solid #4a4a4a1c;
+  background-color: #1212123d;
+  box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
 }
 
+.wrapper:hover {
+  top: -10px;
+}
 
+.poster {
+  height: 33em;
+  padding: 5px 0 0 0;
 
-.deets-btn {
-  font-size: 1.1em;
-  color: white;
-  font-weight: 400;
-  margin-bottom: 4vh;
+  box-shadow: 1px 5px 10px #03030340;
+}
+
+.show-name-div, .deets-btn {
+  text-decoration: none;
 }
 
 
 .show-title {
-  font-size: 1.7em;
-  font-weight: 500;
+  font-size: 1.8em;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.771);
+  text-decoration: none;
 }
+
+
+.profile-h1 {
+  color: rgba(255, 255, 255, 0.771);
+  font-size: 2.8em;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+.edit-profile {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-17 {
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  height: 2em;
+  justify-content: center;
+  text-align: center;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  width: auto;
+  will-change: transform,opacity;
+}
+
+.button-17:hover {
+  background: #f6f9feaa;
+  color: #08162e;
+}
+
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+  border: none;
+}
+
+
 

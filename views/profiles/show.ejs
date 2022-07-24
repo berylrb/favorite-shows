@@ -1,84 +1,66 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/profiles/show.css">
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/profiles/show.css">
+  <%- include('../partials/nav') %>
 
-<main>
-  <!-- profile info section -- email, name, avatar, edit button -->
-  <div class="profile-info">
-  <div class="image-avi">
-    <section class="bg-dark text-secondary px-4 py-5 text-center">
-      <% if (profile.avatar) { %>
-        <img
-          class="image-avi image-box" 
-          src="<%= profile.avatar %>" 
-          alt="<%= profile.name %>'s avatar"
-        >
-      <% } else {%>
-        <img
-          src="/images/icons/user.png" 
-          alt="A placeholder avatar"
-        >
-      <% } %> 
-  </div>
-  <div class="profile-text">
-    <h1 class="display-5 fw-bold text-white pt-2"><%= profile.name %></h1>
-    <div class="py-4">
-      <table class="profile-table table-dark table-striped align-middle">
-        <tbody>
-          <% if (user.profile.equals(profile._id)) { %>
-            <tr>
-              <td class="profile-name">Email Address:</td>
-              <td class="name-value"><%= user.email %></td>
-            </tr>
-          <% } %>
-          <tr>
-            <td class="profile-name">Display Name:</td>
-            <td class="name-value"><%= profile.name %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <% if (user.profile.equals(profile._id)) { %>
-      <a 
-        class="edit-profile btn btn-edit"
-        role="button" 
-        href="/profiles/<%= profile._id %>/edit"
-      >
-        Edit Profile
-      </a>
-    <% } %>
-  </div>
-  </div>
-  </section>
-  <hr class="width-all">
-
-
-<!-- collected shows section -->
-  <section class="bg-white pt-3">
-    <div class="container">
-      <% shows.forEach(show => { %>
-
-                <div class="wrapper">
-                  <div class="card-body">
-                    <p class="show-title fs-4 text-light"><%= show.name %></p>
-                    <% if (show.imageUrl) { %>
-                    <img class="poster" src="<%= show.imageUrl %>" alt="">
-                  <% } else { %>
-                    <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt="">
+    <main>
+      <!-- profile info section -- email, name, avatar, edit button -->
+      <div class="profile-info">
+        <div class="image-avi">
+          <section class="bg-dark text-secondary px-4 py-5 text-center">
+            <div class="img-div">
+              <% if (profile.avatar) { %>
+                <img class="img-pic" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
+                <% } else {%>
+                  <img class="img-pic" src="/images/icons/user.png" alt="A placeholder avatar">
                   <% } %>
-                    <a 
-                      href="/shows/<%= show.mdbId %>" 
-                      class="deets-btn btn-primary"
-                    >
-                      DETAILS
-                    </a>
+            </div>
+        </div>
+        <div class="profile-text">
+          <h1 class="profile-h1">
+            <%= profile.name %>'s Shows
+          </h1>
+          <% if (user.profile.equals(profile._id)) { %>
+            <a class="edit-profile btn btn-edit" role="button" href="/profiles/<%= profile._id %>/edit">
+              <button class="button-17">
+              Edit Profile
+            </button>
+            </a>
+            <% } %>
+        </div>
+      </div>
+      </section>
+
+
+      <!-- collected shows section -->
+      <section class="bg-white" pt-3">
+        <div class="container">
+          <% shows.forEach(show=> { %>
+            <a href="/shows/<%= show.mdbId %>" class="deets-btn btn-primary">
+              <div class="wrapper">
+                <div class="overlay">
+                  <%= show.overview %>
                 </div>
+                <% if (show.imageUrl) { %>
+                  <img class="poster" src="<%= show.imageUrl %>" alt="">
+                  <% } else { %>
+                    <img class="poster"
+                      src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
+                      alt="">
+                    <% } %>
+                      <div class="show-name-div">
+                        <p class="show-title fs-4 text-light">
+                          <%= show.name %>
+                        </p>
+                      </div>
+
+
               </div>
+            </a>
 
 
-      <% }) %>
-    </div>
-  </section>
-</main>
+            <% }) %>
+        </div>
+      </section>
+    </main>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

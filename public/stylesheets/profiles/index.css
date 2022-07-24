@@ -39,23 +39,25 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 
 .card-title {
   margin: 30px 0 0 0;
   font-size: 1.8em;
-  color: rgba(255, 255, 255, 0.891)
+  color: rgba(255, 255, 255, 0.891);
+  text-decoration: none;
 }
 
 
 .card {
-  margin: 5vw;
+  margin: 5em;
   display: flex;
   position: relative;
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
 }
