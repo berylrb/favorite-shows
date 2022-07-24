@@ -27,8 +27,7 @@
   height: 0;
   overflow: hidden;
   z-index: -1;
-  content: url(/images/auth/google/siwg_light_pressed.png)
-    url(/images/auth/google/siwg_light_focus.png);
+  content: url(/images/auth/google/siwg_light_pressed.png) url(/images/auth/google/siwg_light_focus.png);
 }
 
 /* This hides the siwg alt text and broken image icon */
@@ -40,4 +39,112 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.nav-container {
+  grid-area: nav;
+  background-color: #0208237a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border-bottom: 1px rgba(255, 255, 255, 0.444) solid;
+  color: white;
+}
+
+.nav-link {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 1.4em;
+  position: relative;
+  top: 0;
+  transition: top ease 0.2s;
+}
+
+#hamburger-nav {
+  background: #0208237a;
+  /* grid-area: nav;
+  background-color: #0208237a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; */
+}
+
+#hamburger-links {
+  display: flex;
+}
+
+#hamburger-links a {
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.5em;
+  z-index: 999;
+}
+
+
+#hamburger-nav label,
+#hamburger {
+  display: none;
+}
+
+
+@media screen and (max-width: 820px) {
+  #hamburger-links a {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-top: 1px solid #0208237a;
+
+  }
+
+  #hamburger-nav label {
+    display: inline-block;
+    color: white;
+    background: #0208237a;
+    font-style: normal;
+    font-size: 1.7em;
+    padding: 10px;
+    width: 150vw;
+  }
+
+  #hamburger-links {
+    display: none;
+  }
+
+  #hamburger-nav input:checked~#hamburger-links {
+    display: block;
+  }
+
+  .nav-container {
+    grid-area: nav;
+    background-color: #0208237a;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 30px;
+    border-bottom: 1px rgba(255, 255, 255, 0.444) solid;
+    color: white;
+  }
+
+  .queue-h1 {
+    font-size: 2.5em;
+    letter-spacing: 5.5px;
+  }
+
+  .powered-by-div, .db-img {
+    display: block;
+    width: 6em;
+    margin: 0 40px 0 0;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

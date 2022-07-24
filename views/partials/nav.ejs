@@ -7,8 +7,10 @@
     </head>
 
     <body>
-      <nav>
-        <div class="nav-container">
+      <nav id="hamburger-nav">
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+        <div class="nav-container" id="hamburger-links">
           <a class="nav-link" href="/">
             <h1 class="queue-h1">Queue+</h1>
           </a>
@@ -21,17 +23,17 @@
             <a class="nav-link" href="/auth/logout">LOGOUT</a>
             <% } else { %>
               <a class="nav-link" href="/auth/google" class="siwg-link">
-                  LOG IN
+                LOG IN
               </a>
               <% } %>
-              
-            <form action="/shows/search" method="POST">
+
+                <!-- <form action="/shows/search" method="POST">
               <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off"
                 required>
               <button class="button-17" type="submit">Search</button>
-            </form>
-            
-            
+            </form> -->
+
+
                 <div class="powered-by-div">
                   <img class="db-img" src="/images/moviedb/tmdb.svg" alt="">
                 </div>
