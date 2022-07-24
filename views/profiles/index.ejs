@@ -1,32 +1,28 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="/stylesheets/profiles/index.css">
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/profiles/index.css">
+  <%- include('../partials/nav') %>
 
 
-<main>
-  <div class="cardContainer">
-    <% profiles.forEach(profile => { %>
-    <div class="profile-card">
-      <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
-        <div class="card">
-          <% if (profile.avatar) { %>
-            <img 
-              src="<%= profile.avatar %>" 
-              alt="<%= profile.name %>'s avatar"
-            >
-          <% } else { %>
-            <img 
-              src="https://picsum.photos/96" 
-              alt="A placeholder avatar"
-            >
-          <% } %>
-      
-            <h1 class="card-title"><%= profile.name %></h1>
-        </div>
+    <main>
+      <div class="cardContainer">
+        <% profiles.forEach(profile=> { %>
+          <div class="profile-card">
+            <a class="text-decoration-none" href="/profiles/<%= profile._id %>">
+              <div class="card">
+                <% if (profile.avatar) { %>
+                  <img class="prof-pic" src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar">
+                  <% } else { %>
+                    <img class="prof-pic" src="https://picsum.photos/96" alt="A placeholder avatar">
+                    <% } %>
+
+                      <h1 class="card-title">
+                        <%= profile.name %>
+                      </h1>
+              </div>
+          </div>
+          </a>
+          <% }) %>
       </div>
-      </a>
-    <% }) %>
-  </div>
-</main>
+    </main>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>
