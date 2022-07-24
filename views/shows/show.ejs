@@ -67,7 +67,7 @@
               <div class="recs-div">
                 <a class="text-black" href="/shows/<%= apiResult.id %>/recommended">
                   <button class="button-17">See similar shows
-                </button>
+                  </button>
                 </a>
               </div>
             </div>
@@ -82,6 +82,36 @@
 
 
         <div class="bottom-div">
+
+          <div class="second-section">
+            <% if (show?.collectedBy.length> 0) { %>
+              <!-- <div class="accordion" id="accordion"> -->
+              <!-- <div class="accordion-item bg-dark"> -->
+              <div class="collected-by-div">
+                <h2 class="collected-header">
+                  This show appears in <%= show?.collectedBy.length %> user Queues:
+                </h2>
+                <div class="all-collectors">
+                  <% show?.collectedBy.forEach(profile=> { %>
+                    <a class="text-white" href="/profiles/<%= profile._id %>" class="text-white">
+                      <div class="collector">
+                        <img src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar" class="me-3 rounded-circle"
+                          width="50px" height="50px">
+                        <br>
+                        <p class="white-text">
+                          <%= profile.name %>
+                        </p>
+                    </a>
+                </div>
+                </a>
+                <% }) %>
+              </div>
+          </div>
+          <!-- </div> -->
+          <!-- </div> -->
+        </div>
+        <% } %>
+
           <div class="delete-btn-div">
             <% if (userHasShow) { %>
               <div class="remove-div">
@@ -91,120 +121,86 @@
               </div>
               <form class="text-center" action="/shows/<%= apiResult.id %>/removeFromCollection?_method=PATCH"
                 method="POST">
-                <button class="button-17 btn-danger">
+                <button class="button-17">
                   Remove From Collection
                 </button>
               </form>
 
               <% } %>
+
+
+
+                <% if (!userHasShow) { %>
+                  <form class="text-center" action="/shows/<%= apiResult.id %>/addToCollection?_method=PATCH"
+                    method="POST">
+                    <input type="text" name="name" hidden value="<%= apiResult.name %>">
+                    <input type="text" name="mdbId" hidden value="<%= apiResult.id %>">
+                    <input type="text" name="imageUrl" hidden
+                      value="https://image.tmdb.org/t/p/original/<%= apiResult.poster_path %>">
+                    <button class="button-17">
+                      Add To Collection
+                    </button>
+                  </form>
+                  <% } %>
           </div>
 
-          <div class="second-section">
-            <% if (show?.collectedBy.length> 0) { %>
-              <div class="accordion" id="accordion">
-                <div class="accordion-item bg-dark">
-                  <h2 class="accordion-header" id="headingTwo">
-                    This show appears in <%= show?.collectedBy.length %> user Queues:
-                  </h2>
-                  <div class="all-collectors">
-                    <% show?.collectedBy.forEach(profile=> { %>
-                      <div class="collector">
-                        <a class="text-white" href="/profiles/<%= profile._id %>" class="text-white">
-                          <p class="white-text">
-                            <img src="<%= profile.avatar %>" alt="<%= profile.name %>'s avatar"
-                              class="me-3 rounded-circle" width="50px" height="50px">
-                            <br>
-                            <%= profile.name %>
-                          </p>
-                        </a>
+          <div class="review-container">
+            <% if (!userHasReviewed && userHasShow) { %>
+              <div class="form-div">
+                <form class="review-form" action="/reviews/<%= show._id %>" method="POST">
+                  <label for="exampleFormControlTextarea1" class="review-label">
+                    Leave a review:
+                  </label>
+                  <select name="rating" class="form-select">
+                    <option value="1">&#9733;</option>
+                    <option value="2">&#9733; &#9733;</option>
+                    <option value="3">&#9733; &#9733; &#9733;</option>
+                    <option value="4">&#9733; &#9733; &#9733; &#9733;</option>
+                    <option value="5">&#9733; &#9733; &#9733; &#9733; &#9733;</option>
+                  </select>
+                  <textarea name="content" class="form-control" rows="6"></textarea>
+                  <button class="button-17-add" type="submit">Add Review</button>
+                </form>
+              </div>
+              <% } %>
+
+
+                <% if (show?.reviews.length) { %>
+                  <h2 class="text-light">Reviews:</h2>
+                  <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g1 px-4">
+
+                    <% show.reviews.forEach(review=> { %>
+                      <div class="review-wrapper">
+                        <div class="review-card">
+                          <img src="<%= review.author.avatar %>" class="img-fluid"
+                            alt="<%= review.author.name %>'s avatar">
+                          <div class="card-body">
+                            <h3 class="card-title text-dark">
+                              <a class="review-author-a" href="/profiles/<%= review.author._id %>">
+                                <%= review.author.name %>
+                              </a>
+                            </h3>
+                            <p class="card-text">
+                              <%= "★" .repeat(review.rating) %>
+                            </p>
+                            <p class="review-text">
+                              <%= review.content %>
+                            </p>
+                          </div>
+                        </div>
                       </div>
                       <% }) %>
                   </div>
-                </div>
-              </div>
+
+                  <% } %>
+
+
           </div>
-          <% } %>
 
-            <% if (!userHasShow) { %>
-              <form class="text-center" action="/shows/<%= apiResult.id %>/addToCollection?_method=PATCH" method="POST">
-                <input type="text" name="name" hidden value="<%= apiResult.name %>">
-                <input type="text" name="mdbId" hidden value="<%= apiResult.id %>">
-                <input type="text" name="imageUrl" hidden
-                  value="https://image.tmdb.org/t/p/original/<%= apiResult.poster_path %>">
-                <button class="button-31 btn-primary">
-                  Add To Collection
-                </button>
-              </form>
-              <% } %>
+          <br>
+          <br>
 
-                <br>
-                <br>
-                <div class="container">
-                  <% if (!userHasReviewed && userHasShow) { %>
-                    <form class="review-form" action="/reviews/<%= show._id %>" method="POST">
-                      <div class="mb-3 mt-4">
-                        <label for="exampleFormControlTextarea1" class="form-label text-light">
-                          Leave a review:
-                        </label>
-                        <select name="rating" class="form-select">
-                          <option value="1">1 ⭐</option>
-                          <option value="2">2 ⭐</option>
-                          <option value="3">3 ⭐</option>
-                          <option value="4">4 ⭐</option>
-                          <option value="5">5 ⭐</option>
-                        </select>
-                        <textarea name="content" class="form-control" id="exampleFormControlTextarea1"
-                          rows="3"></textarea>
-                      </div>
-                      <button class="button-32 btn-warning" type="submit">Add Review</button>
-                    </form>
-                    <% } %>
-
-
-                      <% if (show?.reviews.length) { %>
-                        <h2 class="text-light my-3">Reviews:</h2>
-                        <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g1 px-4">
-                          <div class="review-wrapper">
-                            <% show.reviews.forEach(review=> { %>
-                              <div class="col">
-                                <div class="card mb-3 bg-secondary">
-                                  <div class="row g-0">
-
-                                    <div class="col-3">
-                                      <img src="<%= review.author.avatar %>" class="img-fluid rounded-circle ms-2 mt-2"
-                                        alt="<%= review.author.name %>'s avatar">
-                                    </div>
-                                    <div class="col-9">
-                                      <div class="card-body">
-                                        <h3 class="card-title text-dark">
-                                          <a class="text-dark text-decoration-none"
-                                            href="/profiles/<%= review.author._id %>">
-                                            <%= review.author.name %>
-                                          </a>
-                                        </h3>
-                                        <p class="card-text text-dark">
-                                          <%= "⭐" .repeat(review.rating) %>
-                                        </p>
-                                        <p class="card-text text-dark">
-                                          <%= review.content %>
-                                        </p>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                </div>
-                              </div>
-                              <% }) %>
-                          </div>
-                          <% } %>
-
-                        </div>
-                </div>
-
-                <br>
-                <br>
-
-        </div>
+      </div>
       </div>
     </main>
 
