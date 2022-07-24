@@ -4,43 +4,50 @@
 
     <main>
 
-          <div class="landing-container">
-            <div class="h1-div">
-              <h1>Trending Shows</h1>
-            </div>
+      <div class="landing-container">
+        <div class="search-div">
+          <form action="/shows/search" method="POST">
+            <input type="text" class="search-input" name="search" placeholder="Search for Show" autocomplete="off"
+              required>
+            <button class="button-17" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="h1-div">
+          <h1>Trending Shows</h1>
+        </div>
 
-            <div class="container">
-              <% results.forEach(result=> { %>
+        <div class="container">
+          <% results.forEach(result=> { %>
 
-                <a href="/shows/<%= result.id %>" class="btn btn-primary">
-                  <div class="wrapper">
-                    <div class="overlay">
-                      <div class="desc-wrap">
-                        <%= result.overview %>
-                      </div>
-                    </div>
-                    <div class="poster-div">
-                      <% if (result.poster_path) { %>
-
-                        <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt="">
-                        <% } else { %>
-                          <img class="poster"
-                            src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
-                            alt="">
-                          <% } %>
-                    </div>
-                    <div class="title-description-div">
-                      <h2 class="show-name">
-                        <%= result.name %>
-                      </h2>
-
-                    </div>
+            <a href="/shows/<%= result.id %>" class="btn btn-primary">
+              <div class="wrapper">
+                <div class="overlay">
+                  <div class="desc-wrap">
+                    <%= result.overview %>
                   </div>
-                </a>
-                <% }) %>
+                </div>
+                <div class="poster-div">
+                  <% if (result.poster_path) { %>
 
-                  
-            </div>
+                    <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt="">
+                    <% } else { %>
+                      <img class="poster"
+                        src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
+                        alt="">
+                      <% } %>
+                </div>
+                <div class="title-description-div">
+                  <h2 class="show-name">
+                    <%= result.name %>
+                  </h2>
+
+                </div>
+              </div>
+            </a>
+            <% }) %>
+
+
+        </div>
     </main>
 
     <%- include('./partials/footer') %>
