@@ -144,7 +144,7 @@ textarea {
   background-color: #1212123d;
   box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
   padding: 4px 15px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .show-name {

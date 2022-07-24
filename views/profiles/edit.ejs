@@ -1,34 +1,28 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+  <link rel="stylesheet" href="/stylesheets/profiles/edit.css">
+  <%- include('../partials/nav') %>
 
-<main>
-  <form 
-    class="container d-flex flex-column align-items-center"
-    action="/profiles/<%= profile._id %>?_method=PATCH"
-    method="POST"
-  >
-    <div class="mb-3 w-75">
-      <label for="name-input" class="form-label">Name</label>
-      <input 
-        type="text"
-        class="form-control"
-        id="name-input"
-        name="name"
-        value="<%= profile.name %>"
-      >
-    </div>
-    <div class="mb-3 w-75">
-      <label for="avatar-input" class="form-label">Avatar</label>
-      <input 
-        type="url" 
-        class="form-control" 
-        id="avatar-input"
-        name="avatar"
-        value="<%= profile.avatar %>"
-      >
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</main>
+    <main>
+      <div class="edit-page">
+        <div class="form-page">
+          <div class="edit-form-div">
+            <h1 class="h1">
+              Edit Profile Information
+            </h1>
+            <form class="form-container" action="/profiles/<%= profile._id %>?_method=PATCH" method="POST">
+              <div class="input-div">
+                <label for="name-input" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name-input" name="name" value="<%= profile.name %>">
+              </div>
+              <div class="input-div">
+                <label for="avatar-input" class="form-label">Avatar</label>
+                <input type="url" class="form-control" id="avatar-input" name="avatar" value="<%= profile.avatar %>">
+              </div>
+              <button type="submit" class="button-17">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

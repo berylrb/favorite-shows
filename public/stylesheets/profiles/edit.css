@@ -1,0 +1,119 @@
+.edit-page {
+  width: 100vw;
+}
+
+.form-page {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-form-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 45em;
+  width: 47em;
+  margin: 2em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #1212123d;
+  box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
+}
+
+.h1 {
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-size: 2.2em;
+  margin: 50px 0 0 0;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.681);
+}
+
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0.715);
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: 'Raleway', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 2em;
+  justify-content: center;
+  letter-spacing: .25px;
+  overflow: visible;
+  padding: 2px 24px;
+  margin: 55px 25px 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 80%;
+  will-change: transform, opacity;
+  z-index: 0;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+.button-17:hover,
+.button-17-add:hover {
+  background: #f6f9fec5;
+  top: -4px;
+  cursor: pointer;
+}
+
+.button-17:active,
+.button-17-add:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+
+
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.input-div,
+.form-control {
+  width: 100%;
+  margin: 25px;
+  border-radius: 5px;
+  height: 2.3em;
+}
+
+.form-label {
+  font-size: 1.6em;
+  margin: 25px 0 0 0;
+  text-align: center;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.827);
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 5px;
+  margin: 15px;
+  background-color: rgba(255, 255, 255, 0.752);
+}
