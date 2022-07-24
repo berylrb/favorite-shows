@@ -227,6 +227,26 @@ h1 {
   letter-spacing: 1.5px;
 }
 
+@media screen and (max-width: 820px) {
+  .search-div {
+    padding: 10px;
+    
+  }
+  
+  
+  .search-input {
+    padding: 5px;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 3px -1px,rgba(0, 0, 0, .14) 0 3px 5px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.574);
+  }
+  
+}
+
 /* .desc-p-div {
   display: -webkit-box;
   -webkit-line-clamp: 4;
