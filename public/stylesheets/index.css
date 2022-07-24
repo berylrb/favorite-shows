@@ -244,6 +244,11 @@ h1 {
     font-size: 14px;
     background-color: rgba(255, 255, 255, 0.574);
   }
+
+  .wrapper:hover .overlay {
+    display: none;
+  }
+  
   
 }
 
