@@ -137,9 +137,9 @@ textarea {
 
 .show-h1-div {
   border: 1px solid #4a4a4a1c;
-    background-color: #1212123d;
-    box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
-    padding: 4px 15px;
+  background-color: #1212123d;
+  box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
+  padding: 4px 15px;
 }
 
 .show-name {
@@ -155,12 +155,24 @@ textarea {
   color: rgba(255, 255, 255, 0.716);
   font-weight: 500;
   font-style: italic;
+  letter-spacing: 1.3px;
 }
 
-.rating-p {
+
+.rating-seasons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.rating-p, .number-szns {
   font-size: 1.4em;
   color: rgba(255, 255, 255, 0.716);
   font-weight: 500;
+  margin: 15px 10px;
+  letter-spacing: 2.1px;
 
 }
 
@@ -174,9 +186,59 @@ textarea {
 
 .overview-p {
   font-size: 1.4em;
-  color: rgba(255, 255, 255, 0.891);
+  color: rgba(255, 255, 255, 0.716);
   line-height: 1.8;
 }
+
+.watch-recs-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+
+.link-to-show-h2 {
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.716);
+  line-height: 1.8;
+  font-weight: 400;
+  padding: 0 20px;
+  text-align: right;
+  letter-spacing: 1.2px;
+  /* border: 1px solid #4a4a4a1c;
+  background-color: #1212123d;
+  box-shadow: 2px 5px 10px #12121240, -2px -5px 55px rgba(164, 164, 164, 0.047);
+  padding: 3px 15px; */
+}
+
+
+.recs-div {
+  font-size: 1.5em;
+  margin: 20px 0 0 0;
+}
+
+.text-black {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.891);
+  font-weight: 600;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+.text-black:hover {
+  top: -4px;
+  cursor: pointer;
+  color: #7cdcfe;
+}
+
+.bottom-div {
+  margin: 20px 0 0 0;
+  border-top: 2px solid #0208234c;
+}
+
 
 .accordion {
   display: flex;
