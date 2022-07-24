@@ -36,7 +36,8 @@ In its current state, this app is a mere imagining of its potential and future m
 
 - [x] set up api call for trending shows
 - [x] set up api call for recommended shows
-- [x] hover over poster cards to see show description 
+- [x] hover over poster cards to see show description
+- [ ] add an 'about' page that explains what queue is for and how to utilize its features 
 - [ ] add a slider that only displays 3-4 poster cards at once
 - [ ] minor css adjustments
 - [ ] add custom animations
