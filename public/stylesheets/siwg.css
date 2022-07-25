@@ -102,18 +102,16 @@
     box-sizing: border-box;
     display: block;
     width: 100%;
-    border-top: 1px solid #0208237a;
 
   }
 
   #hamburger-nav label {
     display: inline-block;
-    color: white;
+    color: rgba(255, 255, 255, 0.891);
     background: #0208237a;
     font-style: normal;
     font-size: 1.7em;
     padding: 10px;
-    width: 150vw;
   }
 
   #hamburger-links {
@@ -127,24 +125,31 @@
   .nav-container {
     grid-area: nav;
     background-color: #0208237a;
-    display: block;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px 0 30px;
-    border-bottom: 1px rgba(255, 255, 255, 0.444) solid;
-    color: white;
+    /* border-bottom: 1px rgba(255, 255, 255, 0.444) solid; */
+    color: rgba(255, 255, 255, 0.891);
   }
 
   .queue-h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     letter-spacing: 5.5px;
   }
 
-  .powered-by-div, .db-img {
-    display: block;
-    width: 6em;
-    margin: 0 40px 0 0;
-    justify-content: space-between;
+  .powered-by-div {
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+  }
+
+  .db-img {
+    width: 12em;
+    margin: 20px;
+    padding: 10px;
   }
 }

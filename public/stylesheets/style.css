@@ -144,7 +144,7 @@ nav>a:hover {
   }
 
   .queue-h1 {
-    font-size: 2.5em;
+    font-size: 2em;
     letter-spacing: 5.5px;
   }
 
@@ -158,7 +158,7 @@ nav>a:hover {
   }
 
   .db-img {
-  width: 15em;
+  width: 12em;
   margin: 20px;
   padding: 10px;
   }
@@ -172,10 +172,6 @@ main {
   flex-direction: column;
 }
 
-.queue-h1 {
-  font-size: 4em;
-  letter-spacing: 5.5px;
-}
 
 
 .material-symbols-outlined {
@@ -183,14 +179,7 @@ main {
   display: flex;
 }
 
-hr {
-  color: rgb(207, 57, 57);
-  background-color: rgb(207, 57, 57);
-}
 
-.google-button {
-  height: 3vh;
-}
 
 .button-17 {
   align-items: center;
