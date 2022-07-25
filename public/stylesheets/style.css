@@ -74,8 +74,10 @@ nav>a:hover {
 }
 
 .db-img {
-  width: 10em;
-  margin: 0 40px 0 20px;
+  width: 15em;
+  margin: 20px;
+  padding: 10px;
+  /* margin: 0 40px 0 20px; */
 }
 
 .nav-container {
@@ -110,7 +112,6 @@ nav>a:hover {
     box-sizing: border-box;
     display: block;
     width: 100%;
-    border-top: 1px solid #0208237a;
 
   }
 
@@ -147,10 +148,19 @@ nav>a:hover {
     letter-spacing: 5.5px;
   }
 
-  .powered-by-div,
+  .powered-by-div{
+    width: 100%;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .db-img {
-    width: 6em;
-    margin: 10px;
+  width: 15em;
+  margin: 20px;
+  padding: 10px;
   }
 }
 
