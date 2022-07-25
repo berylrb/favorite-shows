@@ -41,9 +41,15 @@
   width: 1px;
 }
 
+.queue-h1 {
+  font-size: 3.2em;
+  letter-spacing: 5.5px;
+}
+
+
 .nav-container {
   grid-area: nav;
-  background-color: #0208237a;
+  /* background-color: #0208237a; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -110,7 +116,7 @@
   #hamburger-nav label {
     display: inline-block;
     color: rgba(255, 255, 255, 0.891);
-    background: #0208237a;
+    /* background: #0208237a; */
     font-style: normal;
     font-size: 4.3em;
     padding: 10px;
@@ -126,7 +132,7 @@
 
   .nav-container {
     grid-area: nav;
-    background-color: #0208237a;
+    /* background-color: #0208237a; */
     display: flex;
     justify-content: space-between;
     align-items: center;

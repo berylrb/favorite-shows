@@ -82,7 +82,7 @@ nav>a:hover {
 
 .nav-container {
   grid-area: nav;
-  background-color: #0208237a;
+  /* background-color: #0208237a; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +96,7 @@ nav>a:hover {
   text-decoration: none;
   padding: 10px;
   color: rgba(255, 255, 255, 0.891);
-  font-size: 1.4em;
+  font-size: 2.3em;
   position: relative;
   top: 0;
   transition: top ease 0.2s;
@@ -104,6 +104,10 @@ nav>a:hover {
 
 .nav-link:hover {
   top: -3px;
+}
+
+.queue-h1 {
+  font-size: 3.2em;
 }
 
 
@@ -120,10 +124,11 @@ nav>a:hover {
   #hamburger-nav label {
     display: inline-block;
     color: rgba(255, 255, 255, 0.891);
-    background: #0208237a;
+    /* background: #0208237a; */
     font-style: normal;
     font-size: 4.3em;
     padding: 10px;
+    background-color: #0208237a;
   }
 
   #hamburger-links {
@@ -131,6 +136,7 @@ nav>a:hover {
   }
 
   #hamburger-nav input:checked~#hamburger-links {
+    background-color: #0208237a;
     display: block;
   }
 
