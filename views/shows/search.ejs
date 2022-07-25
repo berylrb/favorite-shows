@@ -3,15 +3,15 @@
 <%- include('../partials/nav') %>
 
 <main>
-  <h1>Search Results</h1>
+  <h1 class="h1">Search Results</h1>
   <% if (search) { %>
-    <h2>You searched for <%= search %></h2>
+    <h2 class="h2">You searched for "<%= search %>"</h2>
   <% } %>
   <div class="container">
     <% results.forEach(result => { %>
       <!-- make div a tag -->
       <div class="wrapper"> 
-        <h2><%= result.name %></h2>
+        
         <% if (result.poster_path) { %>
           <a href="/shows/<%= result.id %>" class="btn btn-primary">
           <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
@@ -19,6 +19,7 @@
           <a href="/shows/<%= result.id %>" class="btn btn-primary">
           <img class="poster" src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress" alt=""></a>
         <% } %>
+        <h2 class="show-name"><%= result.name %></h2>
       </div>
     <% }) %>
 </div>
