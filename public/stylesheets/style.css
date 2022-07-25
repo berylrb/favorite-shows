@@ -41,7 +41,7 @@ nav>a:hover {
 }
 
 #hamburger-nav {
-  background: #0208237a;
+  /* background: #0208237a; */
   /* grid-area: nav;
   background-color: #0208237a;
   display: flex;
@@ -87,7 +87,7 @@ nav>a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px 0 30px;
-  /* border-bottom: 1px rgba(255, 255, 255, 0.444) solid; */
+  border-bottom: 1px rgba(255, 255, 255, 0.444) solid;
   color: rgba(255, 255, 255, 0.891);
 }
 
@@ -136,18 +136,18 @@ nav>a:hover {
   }
 
   #hamburger-nav input:checked~#hamburger-links {
-    background-color: #0208237a;
+    /* background-color: #0208237a; */
     display: block;
   }
 
   .nav-container {
     grid-area: nav;
-    background-color: #0208237a;
+    /* background-color: #0208237a; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px 0 30px;
-    /* border-bottom: 1px rgba(255, 255, 255, 0.444) solid; */
+    border-bottom: 1px rgba(255, 255, 255, 0.444) solid;
     color: rgba(255, 255, 255, 0.891);
   }
 
