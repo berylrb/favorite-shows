@@ -39,9 +39,9 @@ In its current state, this app is a mere imagining of its potential and future m
 - [x] hover over poster cards to see show description
 - [x] minor css adjustments
 - [ ] add an 'about' page that explains what queue is for and how to utilize its features 
+- [ ] add a ternary to display a message if there aren't any similar/recommended shows to display
 - [ ] add 'back' buttons to recommended page
 - [ ] add a slider that only displays 3-4 poster cards at once
-- [ ] add custom animations
 - [ ] allow users to create multiple lists
 - [ ] allow users to search for shows in other users' lists
 - [ ] allow users to search for a show based on keyword
