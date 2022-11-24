@@ -1,3 +1,10 @@
+body {
+  background-image: linear-gradient(to top left, #138756 10%, #1a5972, #020823);
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Raleway', Arial, sans-serif;
+}
+
 .similar-page {
   width: 100%;
   display: flex;
