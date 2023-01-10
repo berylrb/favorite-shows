@@ -10,6 +10,7 @@
         </div>
         <% if (user?.profile.avatar) { %>
           <div class="container">
+            <% if simResults.length { %>
             <% simResults.forEach(result=> { %>
               <!-- make div a tag -->
               <div class="wrapper">
@@ -27,25 +28,31 @@
                     <% } %>
               </div>
               <% }) %>
+              <% } else { %>
+                <div class="wrapper-2">
+                  <h2>
+                    Oops! We don't have any similar titles for this show. Check back later. 
+                  </h2>
+                </div>
           </div>
 
-          <% reqResults.forEach(result=> { %>
-            <!-- make div a tag -->
+          <!-- <# reqResults.forEach(result=> { %>
+          
             <div class="wrapper">
               <h2>
-                <%= result.name %>
+                <# result.name %>
               </h2>
-              <% if (result.poster_path) { %>
-                <a href="/shows/<%= result.id %>" class="btn btn-primary">
-                  <img class="poster" src="https://image.tmdb.org/t/p/original/<%= result.poster_path %>" alt=""></a>
-                <% } else { %>
-                  <a href="/shows/<%= result.id %>" class="btn btn-primary">
+              <# if (result.poster_path) { %>
+                <a href="/shows/<# result.id %>" class="btn btn-primary">
+                  <img class="poster" src="https://image.tmdb.org/t/p/original/<# result.poster_path %>" alt=""></a>
+                <# } else { %>
+                  <a href="/shows/<# result.id %>" class="btn btn-primary">
                     <img class="poster"
                       src="https://images-we-got-pop.imgix.net/website/marketing/movie-placeholder.png?w=300&h=450&fit=clamp&auto=format,compress"
                       alt=""></a>
-                  <% } %>
+                  <# } %>
             </div>
-            <% }) %>
+            <# }) %> -->
       </div>
 
       <% } %>
